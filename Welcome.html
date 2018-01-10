@@ -2,7 +2,7 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=windows-1252">
 <title>Console Test</title>
-<link href="Console%20Test_files/css.css" rel="stylesheet">
+<!--<link href="css/stylesheet.css" rel="stylesheet">-->
 <style>
 	#console{
 		text-size:10pt;
@@ -34,20 +34,19 @@
 
 </style>
 </head>
-<body id="console", onload="fillSection(info)">
+<body id="console", onload="fillSection(welcomeText)">
 		<span id="consoleArea"></span>
 		<span id="cursor" style="opacity: 1;">|</span>
-	</div>
-	
-	<script>
+	<script>var welcomeText=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<br>marianopolis login:       hackerman<br>password:                                    <br style=line-height:2px><span id=\"bonjour\"style=\"font-size:40px\">Bonjour, Hi!<br>Welcome to/Bienvenu à</span><br><span id=\"marianonymousHeader\"style=\"font-size:56px;textAlign:center\">MARIANONYMOUS</span><br style=line-height:2px>${currentDir} ls <br><a id=\"french\", onclick=\"printLink(id)\", href=\"javascript:delay(\'frenchIndex.html\')\">French</a>   <a id=\"english\", href=\"EnglishIndex.html\"> English</a><br>${currentDir} `;</script>
+	<script src="js/consoleTest.js">
 		//NEED TO UPDATE TO MEET THE STANDARDS FOR THE CONSOLE SCRIPT!!!
-		var homeString="<span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
+		//homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString
-		var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<br>marianopolis login: hackerman<br>password:<br style=line-height:2px><span style=\"font-size:40px\">Bonjour, Hi!<br>Welcome to/Bienvenu à</span><br><span style=\"font-size:56px;textAlign:center\">MARIANONYMOUS</span><br style=line-height:2px>${currentDir} ls <br><a id=\"french\", onclick=\"printLink(id)\", href=\"javascript:delay(\'frenchIndex.html\')\">French</a>   <a id=\"english\", href=\"EnglishIndex.html\"> English</a><br>${currentDir} `
-		var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
+		var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<br>marianopolis login:       hackerman<br>password:                                    <br style=line-height:2px><span id=\"bonjour\"style=\"font-size:40px\">Bonjour, Hi!<br>Welcome to/Bienvenu à</span><br><span id=\"marianonymousHeader\"style=\"font-size:56px;textAlign:center\">MARIANONYMOUS</span><br style=line-height:2px>${currentDir} ls <br><a id=\"french\", onclick=\"printLink(id)\", href=\"javascript:delay(\'frenchIndex.html\')\">French</a>   <a id=\"english\", href=\"EnglishIndex.html\"> English</a><br>${currentDir} `
+		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 		
 		
-		function fillSection(text){
+		/*function fillSection(text){
 			var repeatFunction=setInterval(addNextLetter, 50);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
@@ -128,7 +127,7 @@
 		
 		function delay(url){
 			setTimeout(function(){window.location=url}, 4000);
-		}
+		}*/
 	</script>
 
 
