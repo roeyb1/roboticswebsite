@@ -120,7 +120,6 @@
 
 					tags.push(tag);
 				}
-				lastIndexSearched=0;
 			}
 
 		}
