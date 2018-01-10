@@ -44,9 +44,12 @@
 	<script>
 		var homeString="<span class=a>hackerman@marianopolis</span>:<span class=b>~</span><span class=c>$</span> ";
 		var currentDir=homeString;
+		//var
 		var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<br style=line-height:1px>${currentDir} ls <br><a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'game/game.html\')\">game/</a><br><a id=\"team\", href=\"team/team.html\"> team/</a><br><a id=\"robot\", href=\"robot/robot.html\"> robot/</a><br>${currentDir} `;
+		var cleanInfo=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<br style=line-height:1px>${currentDir} ls <br>                                                                                         game/    <br>                                         team/    <br>                                            robot/    <br>${currentDir} `;
 		var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> ";
 
+		var availableTagsRaw="<span class=a></span><span class=b></span><span class=c></span><a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'game/game.html\')\"></a><a id=\"team\", href=\"team/team.html\"></a><a id=\"robot\", href=\"robot/robot.html\"></a><span class=a></span><span class=b></span><span class=c></span>"
 		var availableTags=[
 			{
 				tag:"<span class=a>",
@@ -129,7 +132,7 @@
 
 		function characterIsInTag(characterIndex){
 			var possibleTags=[];
-			var finalTag;
+			var finalTag=new Tag(null,null,null,null,null,null,"consoleArea",null);
 			for (var i=0; i<tags.length;i++){
 				var tag=tags[i];
 				if (characterIndex>=tag.startOfContent && characterIndex<=tag.endOfContent){
@@ -162,6 +165,7 @@
 		}
 
 		function fillSection(text){
+			getRangeOfTags();
 			var repeatFunction=setInterval(addNextLetter, 50);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
@@ -171,23 +175,10 @@
 			var completedLetters=0;
 			var printingComplete=false;
 			var flashCursor;
-
-			var selectedId;
-
-/*			var idObject={
-				idLabel:"",
-				beginningOfRange:undefined,
-				endOfRange:undefined,
-
-				init(idLabel, beginningOfRange, endOfRange){
-					this.idLabel=idLabel;
-					this.beginningOfRange=beginningOfRange;
-					this.endOfRange=endOfRange;
-
-				}
-			}
-*/
-			var possibleIds=[];
+			var selectedTag;
+			
+			//generate tags
+			sectionToFill.innerHTML=availableTagsRaw;
 
 			function cursorFlash(){
 				var cursorOpacity;
@@ -208,8 +199,40 @@
 
 			function addNextLetter(){
 				clearInterval(flashCursor);
+				var selectedTag=new Tag(null,null,null,null,null,null,"consoleArea",null);
+				function getSelectedTag(charNum){
+					this.type=new characterIsInTag(charNum).type;
+					this.opening=new characterIsInTag(charNum).opening;
+					this.closing=new characterIsInTag(charNum).closing;
+					this.startOfContent=new characterIsInTag(charNum).startOfContent;
+					this.endOfContent=new characterIsInTag(charNum).endOfContent;
+					this.contentLength=new characterIsInTag(charNum).contentLength;
+					this.id=new characterIsInTag(charNum).id;
+					this.tagClass=new characterIsInTag(charNum).tagClass;
+				};
+				
+				selectedTag=new getSelectedTag(completedLetters);
+				if (selectedTag.type==null) selectedTag=new Tag(null,null,null,null,null,null,"consoleArea",null);
+				else if (selectedTag.id==null){
+					var possibleTags=document.getElementsByClassName(selectedTag.linkClass);
+					var selectedTagIndex;
+					for (var i=0; i<possibleTags.length; i++){
+						var tag=possibleTags[i];
+						if (completedLetters>=tag.startOfContent && completedLetters<=tag.endOfContent){
+						selectedTagIndex=i;
+						break;
+						}
+					}
+					sectionToFill=document.getElementsByClassName(selectedTag.linkClass)[selectedTagIndex];
+			
+				}
+				else{
+					var selectedId=selectedTag.id;
+					sectionToFill=document.getElementById(selectedId);
+				}
 				//var tagBeginning;
 				//var tagEnd;
+				console.log(sectionToFill);
 				if (completedLetters>=text.length){
 					sectionToFill.innerHTML=fullText;
 					clearInterval(repeatFunction);
