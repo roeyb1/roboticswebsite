@@ -85,12 +85,13 @@
 
 		var availableIdentifiers=[availableClasses,availableIDs,availableClasses]
 
-		function Tag(type,opening,closing,startOfContent,endOfContent,id,tagClass){
+		function Tag(type,opening,closing,startOfContent,endOfContent, contentLength, id,tagClass){
 			this.type=type;
 			this.opening=opening;
 			this.closing=closing;
 			this.startOfContent=startOfContent;
 			this.endOfContent=endOfContent;
+			this.contentLength=contentLength;
 			this.id=id;
 			this.tagClass=tagClass;
 		}
@@ -113,10 +114,11 @@
 					lastIndexSearched=startOfContent;
 
 					var endOfContent=info.indexOf(closingTag, startOfContent);
+					var contentLength=endOfContent-startOfContent;
 
 					var tag;
-					if (availableTags[i].id==null) tag=new Tag(typeOfTag,availableTags[i],closingTag,startOfContent,endOfContent, null, availableTags[i].linkClass);
-					else tag=new Tag(typeOfTag,availableTags[i],closingTag,startOfContent,endOfContent, availableTags[i].id,null);
+					if (availableTags[i].id==null) tag=new Tag(typeOfTag,availableTags[i],closingTag,startOfContent,endOfContent, contentLength, null, availableTags[i].linkClass);
+					else tag=new Tag(typeOfTag,availableTags[i],closingTag,startOfContent,endOfContent,contentLength, availableTags[i].id,null);
 
 					tags.push(tag);
 				}
@@ -126,15 +128,36 @@
 		}
 
 		function characterIsInTag(characterIndex){
+			var possibleTags=[];
+			var finalTag;
 			for (var i=0; i<tags.length;i++){
 				var tag=tags[i];
-				if (characterIndex>tag.startOfContent && characterIndex<tag.endOfContent){
+				if (characterIndex>=tag.startOfContent && characterIndex<=tag.endOfContent){
 					if (tag.id==null) console.log(tag.linkClass);
 					else console.log(tag.id);
+					possibleTags.push(tag);
 				}
-
 			}
-
+			
+			if (possibleTags.length>1){
+				var tagLengths=[]
+				for (var i=0; i<possibleTags.length;i++){
+					tagLengths.push(possibleTags[i].contentLength);
+				}
+				//Find the shortest one --> It will be in the shortest one
+				var shortestLength=Math.min.apply(null, tagLengths);
+				for (var i=0; i<possibleTags.length;i++){
+					if (possibleTags[i].contentLength==shortestLength){
+						finalTag=possibleTags[i];
+						console.log(possibleTags[i].opening.tag);
+						break;
+					}
+				}
+			} else {
+				finalTag=possibleTags[0];
+			}
+			
+			return finalTag;
 
 		}
 
