@@ -7,28 +7,29 @@ numbar.style.fontSize=content.style.fontSize;
 function numberLines(){
 	var preliminaryNumberOfLines;
 	var heightOfContent=content.clientHeight//offsetHeight;
+	var windowHeight=window.innerHeight
 	console.log(heightOfContent);
 	var lineHeight=25;//parseInt(content.style.lineHeight);
 	console.log(lineHeight);
-	preliminaryNumberOfLines=heightOfContent/lineHeight;
-	
+	preliminaryNumberOfLines=windowHeight/lineHeight;
+
 	//First, make sure that the line numbers fit...
 	var widthOfNumbar;
-	
+
 	if (preliminaryNumberOfLines>=100) widthOfNumbar=30;
 	else widthOfNumbar=20;
-	
+
 	numbar.style.width=widthOfNumbar + "px";
 	var windowWidth=window.innerWidth;
 	console.log(windowWidth);
 	var widthOfContent=windowWidth-widthOfNumbar-5;
 	content.style.width=widthOfContent + "px";
-	
+
 	heightOfContent=content.clientHeight//offsetHeight;
 	console.log(heightOfContent);
 	lineHeight=25;//parseInt(content.style.lineHeight);
 	console.log(lineHeight);
-	var numberOfLines=heightOfContent/lineHeight;
+	var numberOfLines=windowHeight/lineHeight;
 	var htmlNumbar="";
 
 	for (i=1; i<=numberOfLines; i++) htmlNumbar += `${i}<br>`;
@@ -47,7 +48,7 @@ var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. 
 			var cursor=document.getElementById("cursor");
 			//cursor.style.opacity=1;
 			var fullText=sectionToFill.innerHTML+text;
-			
+
 			var completedLetters=0;
 			var printingComplete=false;
 			var flashCursor;
@@ -68,7 +69,7 @@ var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. 
 				cursor.style.opacity=cursorOpacity.toFixed();
 
 			}
-			
+
 			function addNextLetter(){
 				clearInterval(flashCursor);
 				//var tagBeginning;
@@ -91,17 +92,17 @@ var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. 
 						var indexOfClosing=substringOfTextLeft.indexOf(">");
 						var textToAdd=substringOfTextLeft.slice(0,indexOfClosing+1);
 						sectionToFill.innerHTML+=textToAdd;
-						
+
 						var newIndex=text.indexOf(">",completedLetters);
-						
+
 						completedLetters=newIndex+1;
 					}
-					//Now, how to figure out the tags... A possibility is to figure out the id of the tag, and then have it add to that tag... quite the idea, especially since we can perform a search for the text "id", and thus ignore the 
+					//Now, how to figure out the tags... A possibility is to figure out the id of the tag, and then have it add to that tag... quite the idea, especially since we can perform a search for the text "id", and thus ignore the
 					printingComplete=false;
 				}
 				startCursor();
 			}
-			
+
 
 			function startCursor(){
 				if (printingComplete) flashCursor=setInterval(cursorFlash,500);
@@ -110,16 +111,16 @@ var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. 
 			}
 			//var flashCursor=setInterval(cursorFlash, 15);
 			//cursor.style.opacity=1;
-		
+
 		}
-		
+
 		function printLink(linkID){
 			var textToPrint=document.getElementById(linkID).innerText;
 			var newDir=homeString.replace("~",`~/${linkID}`);
-			currentDir=newDir;	
+			currentDir=newDir;
 			fillSection(`cd ${linkID}<br>Changing directories to \"${linkID}\"<br>${currentDir}`);
 		}
-		
+
 		function delay(url){
 			setTimeout(function(){window.location=url}, 4000);
 		}
@@ -131,20 +132,20 @@ consoleBox.style.height=75+"px";
 consoleBox.style.overflowY="hidden";
 
 
-function scaleBox(){	
+function scaleBox(){
 	var desiredHeight;
 	var desiredWidth;
-	
+
 	var width=parseInt(consoleBox.style.width);
 	var height=parseInt(consoleBox.style.height);
-	
+
 	var resizerator=setInterval(resize, 0.5);
-	
+
 	function resize(){
 		if (!boxIsScaled){
 			desiredHeight=300;
 			desiredWidth=500;
-			
+
 			if (width<desiredWidth && height<desiredHeight){
 				width+=2; height+=2;
 				consoleBox.style.width=width+"px";
@@ -168,9 +169,9 @@ function scaleBox(){
 		else if (boxIsScaled){
 			desiredHeight=75;
 			desiredWidth=75;
-			
+
 			/*var charactersRemovedFromText=-1;
-			
+
 			var consoleArea=document.getElementById("consoleArea");
 			consoleArea.innerText=consoleArea.innerText.slice(charactersRemovedFromText);
 			charactersRemovedFromText--;*/
@@ -192,12 +193,12 @@ function scaleBox(){
 				boxIsScaled=false;
 				clearInterval(resizerator);
 				consoleBox.style.overflowY="hidden";
-				
+
 			}
-		
-		
+
+
 		}
-	
+
 	}
-	
+
 }
