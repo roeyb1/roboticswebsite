@@ -4,3 +4,73 @@
 	white-space: pre;
 	line-height: 1;
 }
+
+//Robotics Stylesheet
+body{
+	background-color: #000000;
+	font-family: mono, courier;
+	color: #ffffff;
+
+}
+
+#numbar{
+	background-color: #000029;
+	font-family: mono, courier;
+	color: #323232;
+	float:left;
+	width:20px;
+	line-height: 25px;
+	//font-size:20pt;
+	//line-spacing:1;
+	text-align: right;
+	position:absolute;
+	left:0px;
+}
+
+#content{
+	float:right;
+	//width:98%;
+	line-height: 25px;
+	//font-size:20pt;
+	line-spacing:1;
+	//right:0px;
+	background-image: linear-gradient(#181e24 5%, transparent 75%, transparent 100%);
+	//background-color:#000000;
+	color:#ffffff;
+	left:25px;
+	position:absolute;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+
+#console{
+	text-size:10pt;
+	font-family: mono;
+	color:#ffffff;
+	background-color: #000037;
+	//width:25px;
+	//height:25px;
+	position:fixed;
+	overflow-y:hidden;
+	overflow-x:hidden;
+	padding:10px;
+	bottom:4%;
+	right: 4%;
+	border:#37ff00 1px solid;
+	opacity:0.9;
+}
+
+	//The following styles are modified from <OPEN SOURCE WEBSITE HERE>
+a.link {
+	color: #fffff;
+	text-decoration: none;
+}
+#a {
+	color: #84d433;
+}
+#c {
+	color: #00bbcc;
+}
+#b {
+	color: #ff0096;
+}
