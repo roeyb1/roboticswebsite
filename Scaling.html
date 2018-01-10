@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--Test of scalable box-->
+<html>
+<head>
+	<style>
+		body{
+			background-color:white;
+		}
+		
+		/*@keyframes scaling{
+			from{
+				width: 25px;
+				height: 25px;
+			}
+			
+			to{
+				width: 200px;
+				height:200px;
+			}
+		}*/
+		
+		#scalableBox{
+			background-color:black;
+			width:25px;
+			height:25px;
+			position: absolute;
+			border: 3px yellow solid;
+		}
+		
+		#container{
+			position:relative;
+			width: 400px;
+			height:400px;
+			background:blue;
+		
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="scalableBox", onmouseenter="animation()"></div>
+</div>
+
+<script>
+function animation(){
+	var timeInterval=setInterval(scale, 5);
+	var animatingElement=document.getElementById("scalableBox");
+	animatingElement.style.width="25px";
+	animatingElement.style.height="25px";
+	function scale(){
+		var height=parseInt(animatingElement.style.height);
+		var width=parseInt(animatingElement.style.width);
+		
+		if (height>=400 && width>=400){
+			clearInterval(timeInterval);
+		} else {
+			width+=1; height+=1;
+			animatingElement.style.width=width + "px";
+			animatingElement.style.height=height + "px";
+		}
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Console Test</title>
+<style>
+	#console{
+		text-size:10pt;
+		font-family: mono;
+		color:#ffffff;
+		background-color:#000000;
+		height:50%;
+		width:50%;
+		position:absolute;
+	}
+
+</style>
+</head>
+<body>
+	<div id="console", onclick="fillSection('Hello, how are you today?')">
+		<span id="consoleArea"></span>
+		<span id="cursor">|</span>
+	</div>
+	
+	<script>
+		function fillSection(text){
+			var repeatFunction=setInterval(addNextLetter, 50);
+			var sectionToFill=document.getElementById("consoleArea");
+			var cursor=document.getElementById("cursor");
+			//cursor.style.opacity=1;
+			
+			var completedLetters=0;
+			var printingComplete=false;
+
+			function cursorFlash(){
+				var cursorOpacity;
+				switch (cursor.style.opacity){
+					case "0":
+						cursorOpacity=1;
+						break;
+					case "1":
+						cursorOpacity=0;
+						break;
+					default:
+						cursorOpacity=1;
+
+				}
+				cursor.style.opacity=cursorOpacity.toFixed();
+
+			}
+			
+			function addNextLetter(){
+				if (completedLetters>=text.length){
+					clearInterval(repeatFunction);
+					//flashCursor=setInterval(cursorFlash,5);
+					printingComplete=true;
+				}else{
+					cursor.style.opacity=0;
+					sectionToFill.innerHTML+=text[completedLetters];
+					completedLetters++;
+					//cursor.style.opacity=1;
+					printingComplete=false;
+				}
+				startCursor();
+			//cursor.style.opacity=1;
+			}
+			
+
+			function startCursor(){
+				if (printingComplete) var flashCursor=setInterval(cursorFlash,500);
+				else {}
+
+			}
+			//var flashCursor=setInterval(cursorFlash, 15);
+			//cursor.style.opacity=1;
+		
+		}
+	</script>
+</body>
+</html>
