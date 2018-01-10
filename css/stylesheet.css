@@ -1,6 +1,6 @@
 .logo {
 	font-size: 9px;
-	//font-family: mono;
+	/*font-family: mono;*/
 	white-space: pre;
 	line-height: 1;
 }
@@ -28,12 +28,12 @@ body{
 #content{
 	float:right;
 	font-family: 'Roboto Mono', monospace;
-	//width:98%;
+	width:90%;
 	line-height: 25px;
-	//font-size:20pt;
+	/*font-size:20pt;*/
 	line-spacing:1;
-	//right:0px;
-  background-color: linear-gradient(#181e24,#232c33);
+	/*right:0px;*/
+  	background-color: linear-gradient(#181e24,#232c33);
 	color: #aab6cc;
 	left:25px;
 	position:absolute;
@@ -59,16 +59,16 @@ body{
 }
 
 	//The following styles are modified from <OPEN SOURCE WEBSITE HERE>
-a.link {
+a {
 	color: #fffff;
 	text-decoration: none;
 }
-#a {
+.a {
 	color: #84d433;
 }
-#c {
+.c {
 	color: #00bbcc;
 }
-#b {
+.b {
 	color: #ff0096;
 }

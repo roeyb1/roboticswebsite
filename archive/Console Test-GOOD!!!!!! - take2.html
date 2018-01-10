@@ -1,49 +1,48 @@
-//RoboticsStuff.js
-var content=document.getElementById("content");
-var numbar=document.getElementById("numbar");
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Console Test</title>
+<link href="Console%20Test_files/css.css" rel="stylesheet">
+<style>
+	#console{
+		text-size:10pt;
+		font-family: mono;
+		color:#ffffff;
+		background-color: #181e24;
+		height:50%;
+		width:50%;
+		position:absolute;
+		overflow-y:scroll;
+		overflow-x:hidden;
+		padding:10px;
+	}
+	
+	//The following styles are taken from <OPEN SOURCE WEBSITE HERE>
+	a {
+		color: #00bbcc;
+		text-decoration: none;
+	}
+	.a {
+		color: #66b447;
+	}
+	.c {
+		color: #00bbcc;
+	}
+	.b {
+		color: #ff0096;
+	}
 
-numbar.style.fontSize=content.style.fontSize;
-
-function numberLines(){
-	var preliminaryNumberOfLines;
-	var heightOfContent=content.clientHeight//offsetHeight;
-	var windowHeight=window.innerHeight
-	console.log(heightOfContent);
-	var lineHeight=25;//parseInt(content.style.lineHeight);
-	console.log(lineHeight);
-	if (heightOfContent>windowHeight) preliminaryNumberOfLines=heightOfContent/lineHeight;
-	else preliminaryNumberOfLines=windowHeight/lineHeight;
-
-	//First, make sure that the line numbers fit...
-	var widthOfNumbar;
-
-	if (preliminaryNumberOfLines>=100) widthOfNumbar=30;
-	else widthOfNumbar=20;
-
-	numbar.style.width=widthOfNumbar + "px";
-	var windowWidth=window.innerWidth;
-	console.log(windowWidth);
-	var widthOfContent=windowWidth-(widthOfNumbar+10);
-	content.style.width=widthOfContent + "px";
-
-	heightOfContent=content.clientHeight//offsetHeight;
-	console.log(heightOfContent);
-	lineHeight=25;//parseInt(content.style.lineHeight);
-	console.log(lineHeight);
-	var numberOfLines;
-	if (heightOfContent>windowHeight) numberOfLines=heightOfContent/lineHeight;
-	else numberOfLines=windowHeight/lineHeight;
-	var htmlNumbar="";
-
-	for (i=1; i<=numberOfLines; i++) htmlNumbar += `${i}<br>`;
-
-	document.getElementById("numbar").innerHTML=htmlNumbar;
-}
-
-//Navigator
-var repeatFunction;
-var flashCursor;
-var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
+</style>
+</head>
+<body>
+<span>Hello <a href="file:///home/benjamin/Documents/Marianopolis/Robotics/2018/Page1.html">World</a></span>
+	<div id="console" ,="" ondblclick="fillSection(info)">
+		<span id="consoleArea"></span>
+		<span id="cursor" style="opacity: 1;">|</span>
+	</div>
+	
+	<script>
+		var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString;
 		var info="Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span>        <!--lag-->ls <br><a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'game/game.html\')\">game/</a><br><a id=\"team\", href=\"team/team.html\"> team/</a><br><a id=\"robot\", href=\"robot/robot.html\"> robot/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> "
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
@@ -122,8 +121,6 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			}
 			
 
-
-
 			function startCursor(){
 				if (printingComplete) flashCursor=setInterval(cursorFlash,500);
 				else {}
@@ -143,91 +140,11 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			currentDir=newDir;	
 			fillSection(`cd ${linkID}<br>Changing directories to \"${linkID}\"<br>${currentDir}`);
 		}
-
-
+		
 		function delay(url){
 			setTimeout(function(){window.location=url}, 4000);
-			clearInterval(flashCursor);
 		}
-//Expand navigator:
-var consoleBox=document.getElementById("console");
-var boxIsScaled=false;
-consoleBox.style.width=75+"px";
-consoleBox.style.height=75+"px";
-consoleBox.style.overflowY="hidden";
+	</script>
 
 
-function scaleBox(){
-	var desiredHeight;
-	var desiredWidth;
-
-	var width=parseInt(consoleBox.style.width);
-	var height=parseInt(consoleBox.style.height);
-
-	var resizerator=setInterval(resize, 0.5);
-
-	function resize(){
-		if (!boxIsScaled){
-			desiredHeight=300;
-			desiredWidth=500;
-
-			if (width<desiredWidth && height<desiredHeight){
-				width+=2; height+=2;
-				consoleBox.style.width=width+"px";
-				consoleBox.style.height=height+"px";
-			}
-			else if (width<desiredWidth){
-				width+=2;
-				consoleBox.style.width=width+"px";
-			}
-			else if (height<desiredHeight){
-				height+=1;
-				consoleBox.style.height=height+"px";
-			}
-			else{
-				boxIsScaled=true;
-				clearInterval(resizerator);
-				document.getElementById("consoleArea").innerHTML="";
-				consoleBox.style.overflowY="auto";
-				fillSection(info);
-			}
-		}
-		else if (boxIsScaled){
-			desiredHeight=75;
-			desiredWidth=75;
-
-			/*var charactersRemovedFromText=-1;
-
-			var consoleArea=document.getElementById("consoleArea");
-			consoleArea.innerText=consoleArea.innerText.slice(charactersRemovedFromText);
-			charactersRemovedFromText--;*/
-			clearInterval(repeatFunction);
-			clearInterval(flashCursor);
-			cursor.style.opacity=0;
-			document.getElementById("consoleArea").innerHTML="Navigate";
-			if (width>desiredWidth && height>desiredHeight){
-				width-=2; height-=2;
-				consoleBox.style.width=width+"px";
-				consoleBox.style.height=height+"px";
-			}
-			else if (width>desiredWidth){
-				width-=2;
-				consoleBox.style.width=width+"px";
-			}
-			else if (height>desiredHeight){
-				height-=1;
-				consoleBox.style.height=height+"px";
-			}
-			else{
-				boxIsScaled=false;
-				clearInterval(resizerator);
-				consoleBox.style.overflowY="hidden";
-
-			}
-
-
-		}
-
-	}
-
-}
+</body></html>
