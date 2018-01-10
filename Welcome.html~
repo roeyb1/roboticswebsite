@@ -14,7 +14,7 @@
 		position:absolute;
 		overflow-y:scroll;
 		overflow-x:hidden;
-		padding:12px;
+		padding:10px;
 	}
 	
 	//The following styles are taken from <OPEN SOURCE WEBSITE HERE>
