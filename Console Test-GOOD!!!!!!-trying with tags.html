@@ -16,7 +16,7 @@
 		overflow-x:hidden;
 		padding:10px;
 	}
-	
+
 	//The following styles are taken from <OPEN SOURCE WEBSITE HERE>
 	a {
 		color: #00bbcc;
@@ -40,13 +40,13 @@
 		<span id="consoleArea"></span>
 		<span id="cursor" style="opacity: 1;">|</span>
 	</div>
-	
+
 	<script>
 		var homeString="<span class=a>hackerman@marianopolis</span>:<span class=b>~</span><span class=c>$</span> ";
 		var currentDir=homeString;
 		var info=`Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<br style=line-height:1px>${currentDir} ls <br><a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'game/game.html\')\">game/</a><br><a id=\"team\", href=\"team/team.html\"> team/</a><br><a id=\"robot\", href=\"robot/robot.html\"> robot/</a><br>${currentDir} `;
 		var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> ";
-		
+
 		var availableTags=[
 			{
 				tag:"<span class=a>",
@@ -79,12 +79,12 @@
 				ocurrences:1
 			}
 		];
-		
+
 		var availableClasses=["a","b","c"];
 		var availableIDs=["game","team","robot"];
-		
+
 		var availableIdentifiers=[availableClasses,availableIDs,availableClasses]
-		
+
 		function Tag(type,opening,closing,startOfContent,endOfContent,id,tagClass){
 			this.type=type;
 			this.opening=opening;
@@ -92,11 +92,11 @@
 			this.startOfContent=startOfContent;
 			this.endOfContent=endOfContent;
 			this.id=id;
-			this.tagClass=tagClass;		
+			this.tagClass=tagClass;
 		}
-		
+
 		var tags=[];
-		
+
 		function getRangeOfTags(){
 			var lastIndexSearched=0;
 			for (var i=0; i<availableTags.length; i++){
@@ -105,25 +105,25 @@
 					console.log(typeOfTag);
 					var closingTag="</"+typeOfTag+">";
 					console.log(closingTag);
-				
+
 					//Now, to find the ranges...
 					var startOfTag=info.indexOf(availableTags[i].tag,lastIndexSearched);
 					var startOfContent=info.indexOf(">",startOfTag)+1;
-					
+
 					lastIndexSearched=startOfContent;
-				
+
 					var endOfContent=info.indexOf(closingTag, startOfContent);
-				
+
 					var tag;
 					if (availableTags[i].id==null) tag=new Tag(typeOfTag,availableTags[i],closingTag,startOfContent,endOfContent, null, availableTags[i].linkClass);
 					else tag=new Tag(typeOfTag,availableTags[i],closingTag,startOfContent,endOfContent, availableTags[i].id,null);
-				
+
 					tags.push(tag);
 				}
 			}
-		
+
 		}
-		
+
 		function characterIsInTag(characterIndex){
 			for (var i=0; i<tags.length;i++){
 				var tag=tags[i];
@@ -131,40 +131,40 @@
 					if (tag.id==null) console.log(tag.linkClass);
 					else console.log(tag.id);
 				}
-			
+
 			}
-		
-		
+
+
 		}
-		
+
 		function fillSection(text){
 			var repeatFunction=setInterval(addNextLetter, 50);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
 			//cursor.style.opacity=1;
 			var fullText=sectionToFill.innerHTML+text;
-			
+
 			var completedLetters=0;
 			var printingComplete=false;
 			var flashCursor;
-			
+
 			var selectedId;
-			
+
 /*			var idObject={
 				idLabel:"",
 				beginningOfRange:undefined,
 				endOfRange:undefined,
-				
+
 				init(idLabel, beginningOfRange, endOfRange){
 					this.idLabel=idLabel;
 					this.beginningOfRange=beginningOfRange;
 					this.endOfRange=endOfRange;
-				
+
 				}
 			}
-*/			
+*/
 			var possibleIds=[];
-			
+
 			function cursorFlash(){
 				var cursorOpacity;
 				switch (cursor.style.opacity){
@@ -181,7 +181,7 @@
 				cursor.style.opacity=cursorOpacity.toFixed();
 
 			}
-			
+
 			function addNextLetter(){
 				clearInterval(flashCursor);
 				//var tagBeginning;
@@ -204,17 +204,17 @@
 						var indexOfClosing=substringOfTextLeft.indexOf(">");
 						var textToAdd=substringOfTextLeft.slice(0,indexOfClosing+1);
 						sectionToFill.innerHTML+=textToAdd;
-						
+
 						var newIndex=text.indexOf(">",completedLetters);
-						
+
 						completedLetters=newIndex+1;
 					}
-					//Now, how to figure out the tags... A possibility is to figure out the id of the tag, and then have it add to that tag... quite the idea, especially since we can perform a search for the text "id", and thus ignore the 
+					//Now, how to figure out the tags... A possibility is to figure out the id of the tag, and then have it add to that tag... quite the idea, especially since we can perform a search for the text "id", and thus ignore the
 					printingComplete=false;
 				}
 				startCursor();
 			}
-			
+
 
 			function startCursor(){
 				if (printingComplete) flashCursor=setInterval(cursorFlash,500);
@@ -223,16 +223,16 @@
 			}
 			//var flashCursor=setInterval(cursorFlash, 15);
 			//cursor.style.opacity=1;
-		
+
 		}
-		
+
 		function printLink(linkID){
 			var textToPrint=document.getElementById(linkID).innerText;
 			var newDir=homeString.replace("~",`~/${linkID}`);
-			currentDir=newDir;	
+			currentDir=newDir;
 			fillSection(`cd ${linkID}<br>Changing directories to \"${linkID}\"<br>${currentDir}`);
 		}
-		
+
 		function delay(url){
 			setTimeout(function(){window.location=url}, 4000);
 		}
