@@ -5,24 +5,21 @@
 	line-height: 1;
 }
 
-//Robotics Stylesheet
+
 body{
 	font-family: 'Roboto Mono', monospace;
-  background-color: linear-gradient(#181e24,#232c33);
-}
-html {
-	background-color:  #232c33;
+  background-color: #232c33;
+	height: 100%;
 }
 
+
 #numbar{
-	background-color: #181e24;
+	background-color: #232c33;
 	font-family: 'Roboto Mono', monospace;
 	color: #414141;
 	float:left;
 	width:20px;
 	line-height: 25px;
-	//font-size:20pt;
-	//line-spacing:1;
 	text-align: right;
 	position:absolute;
 	left:0px;
