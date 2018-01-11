@@ -53,7 +53,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			var cursor=document.getElementById("cursor");
 			//cursor.style.opacity=1;
 			var fullText=sectionToFill.innerHTML+text;
-			
+
 			var completedLetters=0;
 			var printingComplete=false;
 			var flashCursor;
@@ -74,7 +74,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 				cursor.style.opacity=cursorOpacity.toFixed();
 
 			}
-			
+
 			function addNextLetter(){
 				clearInterval(flashCursor);
 				//var tagBeginning;
@@ -98,11 +98,11 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 						var idOfTag;//search for "id", then for class//No! Don't need to search for class! id is enough!!!!
 						var textToAdd=substringOfTextLeft.slice(0,indexOfClosing+1);
 						sectionToFill.innerHTML+=textToAdd;
-						
+
 						var newIndex=text.indexOf(">",completedLetters);
 						//Search for id
 						var presenceOfId=textToAdd.search("id");
-						
+
 						if (presenceOfId==-1){
 							sectionToFill=document.getElementById("consoleArea");
 						} else{
@@ -110,17 +110,17 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 							var closingQuote=textToAdd.indexOf("\"",firstQuote+1);
 							idOfTag=textToAdd.slice(firstQuote+1,closingQuote);
 							sectionToFill=document.getElementById(idOfTag);
-						
+
 						}
-						
+
 						completedLetters=newIndex+1;
 					}
-					//Now, how to figure out the tags... A possibility is to figure out the id of the tag, and then have it add to that tag... quite the idea, especially since we can perform a search for the text "id", and thus ignore the 
+					//Now, how to figure out the tags... A possibility is to figure out the id of the tag, and then have it add to that tag... quite the idea, especially since we can perform a search for the text "id", and thus ignore the
 					printingComplete=false;
 				}
 				startCursor();
 			}
-			
+
 
 
 
@@ -131,16 +131,16 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			}
 			//var flashCursor=setInterval(cursorFlash, 15);
 			//cursor.style.opacity=1;
-		
+
 		}
-		
+
 		function printLink(linkID){
 			var textToPrint=document.getElementById(linkID).innerText;
 			var newDir=homeString.replace("~",`~/${linkID}`);
 			newDir=newDir.replace("\"aSecond\"","\"aThird\"");
 			newDir=newDir.replace("\"bSecond\"","\"bThird\"");
 			newDir=newDir.replace("\"cSecond\"","\"cThird\"");
-			currentDir=newDir;	
+			currentDir=newDir;
 			fillSection(`cd ${linkID}<br>Changing directories to \"${linkID}\"<br>${currentDir}`);
 		}
 
@@ -152,27 +152,27 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 //Expand navigator:
 var consoleBox=document.getElementById("console");
 var boxIsScaled=false;
-consoleBox.style.width=75+"px";
-consoleBox.style.height=75+"px";
+var consoleSmallHeight = 75;
+var consoleSmallWidth = 75;
+consoleBox.style.width=consoleSmallWidth+"px";
+consoleBox.style.height=consoleSmallHeight+"px";
 consoleBox.style.overflowY="hidden";
 
-
+var desiredHeight = 300;
+var desiredWidth = 500;
+var consoleAspect = (desiredHeight-consoleSmallHeight)/(desiredWidth-consoleSmallWidth);
 function scaleBox(){
-	var desiredHeight;
-	var desiredWidth;
 
 	var width=parseInt(consoleBox.style.width);
 	var height=parseInt(consoleBox.style.height);
 
 	var resizerator=setInterval(resize, 0.5);
-
 	function resize(){
 		if (!boxIsScaled){
 			desiredHeight=300;
 			desiredWidth=500;
-
 			if (width<desiredWidth && height<desiredHeight){
-				width+=2; height+=2;
+				width+=2; height+=2*consoleAspect;
 				consoleBox.style.width=width+"px";
 				consoleBox.style.height=height+"px";
 			}
@@ -206,7 +206,7 @@ function scaleBox(){
 			cursor.style.opacity=0;
 			document.getElementById("consoleArea").innerHTML="Navigate";
 			if (width>desiredWidth && height>desiredHeight){
-				width-=2; height-=2;
+				width-=2; height-=2*consoleAspect;
 				consoleBox.style.width=width+"px";
 				consoleBox.style.height=height+"px";
 			}
