@@ -8,6 +8,7 @@
 
 body{
 	font-family: 'Roboto Mono', monospace;
+	color: black;
   background-color: #232c33;
 	height: 100%;
 }
@@ -27,7 +28,7 @@ body{
 
 #content{
 	float:right;
-	font-family: 'Roboto Mono', monospace;
+	font-family: 'Inconsolata', monospace;
 	width:90%;
 	line-height: 25px;
 	/*font-size:20pt;*/
@@ -71,4 +72,8 @@ a {
 }
 .b {
 	color: #ff0096;
+}
+
+.teamTitle {
+	color: white;
 }
