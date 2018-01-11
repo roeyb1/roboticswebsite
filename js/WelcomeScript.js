@@ -4,7 +4,7 @@ var repeatFunction;
 var flashCursor;
 var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString;
-		var welcomeText="<p>Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.</p><p>marianopolis login:       hackerman<br>password:                                    </p><br style=line-height:2px><p id=\"bonjour\"style=\"font-size:40px;text-align:center\">Bonjour, Hi!</p><p id=\"welcome\"style=\"font-size:40px;text-align:center\">Welcome to/Bienvenu \u00e0</p><p id=\"marianonymousHeader\"style=\"font-size:56px;text-align:center\">MARIANONYMOUS</p><p style=line-height:2px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span> ls </p><p id=\"links\"><a id=\"french\", onclick=\"printLink(id)\", href=\"javascript:delay(\'frenchIndex.html\')\", onmouseenter=\"correctText(id)\", onmouseleave=\"correctText(id)\">PYTHON</a><!---id=\"links\"-->   <a id=\"english\", onclick=\"printLink(id)\", href=\"javascript:delay(\'englishIndex.html\')\", onmouseover=\"correctText(id)\", onmouseleave=\"correctText(id)\">HASKELL</a></p><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
+		var welcomeText="<p>Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved. Toutes gauches r\u00e9serv\u00e9s.</p><p>marianopolis login:       hackerman<br>password:                                    </p><br style=line-height:2px><p id=\"bonjour\"style=\"font-size:40px;text-align:center\">Bonjour, Hi!</p><p id=\"welcome\"style=\"font-size:40px;text-align:center\">Welcome to/Bienvenu \u00e0</p><p id=\"marianonymousHeader\"style=\"font-size:56px;text-align:center\">MARIANONYMOUS</p><p style=line-height:20px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span> ls <br>Choose your language / SVP choisissez votre langue</p><p id=\"links\", style=lineHeight:20px><a id=\"fran\u00e7ais\", onclick=\"printLink(id)\", href=\"javascript:delay(\'frenchIndex.html\')\", onmouseenter=\"correctText(id)\", onmouseleave=\"correctText(id)\">ASSEMBLY</a><!---id=\"links\"-->   <a id=\"english\", onclick=\"printLink(id)\", href=\"javascript:delay(\'englishIndex.html\')\", onmouseover=\"correctText(id)\", onmouseleave=\"correctText(id)\">HASKELL</a></p><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 		function fillSection(text){
 			var repeatFunction=setInterval(addNextLetter, 10);
@@ -106,7 +106,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		
 		function correctText(id){
 			if (document.getElementById(id).innerHTML==id.toUpperCase()){
-				if (id=="french") document.getElementById(id).innerHTML="PYTHON";
+				if (id=="fran\u00e7ais") document.getElementById(id).innerHTML="ASSEMBLY";
 				else if (id=="english") document.getElementById(id).innerHTML="HASKELL";
 			
 			}

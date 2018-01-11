@@ -1,11 +1,14 @@
 body{
-
+  background-image: url("logo.png")
 }
 #console{
+	display:block;
 	text-size:10pt;
 	font-family: mono;
 	color:#ffffff;
-	background-image: url("logo-background.png");
+	background-image: url("logo-transparent.png");
+	background-repeat: no-repeat;
+	background-size:cover;
 	background-color: #181e24;
 	position:relative;
 	overflow-y:scroll;
