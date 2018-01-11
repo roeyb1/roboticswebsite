@@ -1,0 +1,60 @@
+body{
+
+}
+#console{
+	text-size:10pt;
+	font-family: mono;
+	color:#ffffff;
+	background-image: url("logo-background.png");
+	background-color: #181e24;
+	position:relative;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	padding:12px;
+}
+
+#links{
+	text-align:center;
+
+}
+
+//The following styles are taken from <OPEN SOURCE WEBSITE HERE>
+a {
+	color: #00bbcc;
+	text-decoration: none;
+	font-size:40pt;
+	text-align:center;
+}
+a:link{
+	color: #ffa503;
+	text-decoration: none;
+	font-size:40pt;
+	text-align:center;
+}
+a:visited{
+	color: #fffff;
+	text-decoration: none;
+	font-size:40pt;
+	text-align:center;
+}
+a:hover{
+	color: #ff0000;
+	font-size:40pt;
+	text-align:center;
+}
+a:active{
+	color:#ff0000;
+	text-size:40pt;
+	text-alignment:center;
+}
+.a {
+	color: #66b447;
+}
+.c {
+	color: #00bbcc;
+}
+.b {
+	color: #ff0096;
+}
+
+

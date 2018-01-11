@@ -7,23 +7,32 @@
 
 
 body{
-	font-family: 'Roboto Mono', monospace;
+	font-family: 'Anonymous Pro', monospace;
 	color: black;
-  background-color: #232c33;
+	background-color: #1d183c;
+	/*background-image: linear-gradient(to bottom, #14193c 0%,#232c47 100%);
+	background-size: contain;*/
 	height: 100%;
+	right:0px;
+	overflow-x:hidden;
 }
 
 
 #numbar{
-	background-color: #232c33;
-	font-family: 'Roboto Mono', monospace;
-	color: #414141;
+	background-color: #25223c;
+	font-family: 'Anonymous Pro', monospace;
+	color: #535353;
 	float:left;
 	width:20px;
 	line-height: 25px;
 	text-align: right;
 	position:absolute;
 	left:0px;
+	top:0px;
+	padding-top:8px;
+	bottom:0px;
+	height: 100%;
+	box-shadow:0px 0px 2px 2px #25223c;
 }
 
 #content{
@@ -34,21 +43,23 @@ body{
 	/*font-size:20pt;*/
 	line-spacing:1;
 	/*right:0px;*/
-  	background-color: linear-gradient(#181e24,#232c33);
+  	/*background-color: linear-gradient(#14193c,#232c47);*/
 	color: #aab6cc;
-	left:25px;
+	left:30px;
+	right:0px;
 	position:absolute;
 	overflow-x:hidden;
 	overflow-y:scroll;
+	padding-Right:1cm;
 }
 
 #console{
 	text-size:10pt;
-	font-family: 'Roboto Mono', monospace;
+	font-family: 'Anonymous Pro', monospace;
 	color:#ffffff;
 	background-color: #000037;
-	//width:25px;
-	//height:25px;
+	/*width:25px;*/
+	/*height:25px;*/
 	position:fixed;
 	overflow-y:hidden;
 	overflow-x:hidden;
@@ -59,7 +70,7 @@ body{
 	opacity:0.9;
 }
 
-	/*The following styles are modified from <OPEN SOURCE WEBSITE HERE>*/
+	/*The following styles are modified from <OPEN SOURCE WEBSITE HERE>-ish*/
 a:link{
 	color: #ffa503;
 	text-decoration: none;

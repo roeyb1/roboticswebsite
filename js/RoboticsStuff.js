@@ -23,8 +23,11 @@ function numberLines(){
 	numbar.style.width=widthOfNumbar + "px";
 	var windowWidth=window.innerWidth;
 	console.log(windowWidth);
-	var widthOfContent=windowWidth-(widthOfNumbar+10);
+	var widthOfContent=windowWidth-(widthOfNumbar+5);
 	content.style.width=widthOfContent + "px";
+	var widthOfContentText=widthOfContent-10;
+	content.style.paddingRight="1cm";
+	content.style.left=widthOfNumbar+5+"px";
 
 	heightOfContent=content.clientHeight//offsetHeight;
 	console.log(heightOfContent);
@@ -36,8 +39,12 @@ function numberLines(){
 	var htmlNumbar="";
 
 	for (i=1; i<=numberOfLines; i++) htmlNumbar += `${i}<br>`;
-
+	
 	document.getElementById("numbar").innerHTML=htmlNumbar;
+	numbar.style.bottom=0+"px";
+	if (heightOfContent>windowHeight) numbar.style.height=heightOfContent+"px";
+	else numbar.style.height=windowHeight+"px";
+
 }
 
 //Navigator
@@ -140,13 +147,8 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			newDir=newDir.replace("\"aSecond\"","\"aThird\"");
 			newDir=newDir.replace("\"bSecond\"","\"bThird\"");
 			newDir=newDir.replace("\"cSecond\"","\"cThird\"");
-<<<<<<< HEAD
 			currentDir=newDir;	
 			fillSection(`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`);
-=======
-			currentDir=newDir;
-			fillSection(`cd ${linkID}<br>Changing directories to \"${linkID}\"<br>${currentDir}`);
->>>>>>> c69cce820514a80d50017d3202c1087f426764fc
 		}
 
 
