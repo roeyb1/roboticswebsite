@@ -58,10 +58,20 @@ body{
 	opacity:0.9;
 }
 
-	//The following styles are modified from <OPEN SOURCE WEBSITE HERE>
-a {
+	/*The following styles are modified from <OPEN SOURCE WEBSITE HERE>*/
+a:link{
+	color: #ffa503;
+	text-decoration: none;
+}
+a:visited{
 	color: #fffff;
 	text-decoration: none;
+}
+a:hover{
+	color: #ff0000;
+}
+a:active{
+	color:#ff0000;
 }
 .a {
 	color: #84d433;
