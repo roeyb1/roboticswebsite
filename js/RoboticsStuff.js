@@ -154,12 +154,14 @@ var consoleBox=document.getElementById("console");
 var boxIsScaled=false;
 var consoleSmallHeight = 75;
 var consoleSmallWidth = 75;
+var consoleBigHeight = 300;
+var consoleBigWidth = 500;
 consoleBox.style.width=consoleSmallWidth+"px";
 consoleBox.style.height=consoleSmallHeight+"px";
 consoleBox.style.overflowY="hidden";
 
-var desiredHeight = 300;
-var desiredWidth = 500;
+var desiredHeight = consoleBigHeight;
+var desiredWidth = consoleBigWidth;
 var consoleAspect = (desiredHeight-consoleSmallHeight)/(desiredWidth-consoleSmallWidth);
 function scaleBox(){
 
@@ -169,8 +171,8 @@ function scaleBox(){
 	var resizerator=setInterval(resize, 0.5);
 	function resize(){
 		if (!boxIsScaled){
-			desiredHeight=300;
-			desiredWidth=500;
+			desiredHeight=consoleBigHeight;
+			desiredWidth=consoleBigWidth;
 			if (width<desiredWidth && height<desiredHeight){
 				width+=2; height+=2*consoleAspect;
 				consoleBox.style.width=width+"px";
