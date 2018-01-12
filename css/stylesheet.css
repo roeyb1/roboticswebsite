@@ -59,7 +59,7 @@ body {
 	width:90%;
 	line-height: 25px;
 	/*font-size:20pt;*/
-	line-spacing:1;
+	line-spacing: 1;
 	/*right:0px;*/
 	color: #93a1a1;
 	left:30px;
@@ -68,6 +68,14 @@ body {
 	overflow-x:hidden;
 	overflow-y:scroll;
 	padding-Right:1cm;
+}
+
+div.container {
+	margin-left: 5%;
+	margin-right: 5%;
+	border: #000000 1px solid;
+	margin-bottom: 15px;
+	padding:10px;
 }
 
 #console{
