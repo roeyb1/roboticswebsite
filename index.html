@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Marianonymous Home</title>
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="css/welcomeStylesheet.css">
+<title>Console Test</title>
+<!--<link href="css/stylesheet.css" rel="stylesheet">-->
 </head>
-<body onload="numberLines()", onresize="numberLines()">
-<div id="numbar"></div>
-<div id="content">
-	<p style="font-size:40pt;text-align:center;font-family:'Anonymous Pro', monospace"><b>Welcome to Marianonymous<b></p>
-</div>
-<div id="console", onmousenter="scaleBox()", onmouseleave="scaleBox()">
-	<div id="consoleArea">Navigate</div>
-	<div id="cursor">|</div>
-</div>
-<script src="js/RoboticsStuff.js"></script>
-</body>
-</html>
+<body id="console", onload="fillSection(welcomeText)">
+		<span id="consoleArea"></span>
+		<span id="cursor" style="opacity: 1;">|</span>
+	<script src="js/WelcomeScript.js"></script>
+
+
+</body></html>
