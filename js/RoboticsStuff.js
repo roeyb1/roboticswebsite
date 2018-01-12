@@ -54,15 +54,18 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		var currentDir=homeString;
 		var info="Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span>        <!--lag-->ls <br><a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'game/game.html\')\">game/</a><br><a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'team/team.html\')\"> team/</a><br><a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'robot/robot.html\')\"> robot/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> "
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
+var printingComplete;
+
 		function fillSection(text){
-			var repeatFunction=setInterval(addNextLetter, 50);
+			
+			var repeatFunction=setInterval(addNextLetter, 10);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
 			//cursor.style.opacity=1;
 			var fullText=sectionToFill.innerHTML+text;
 
 			var completedLetters=0;
-			var printingComplete=false;
+			printingComplete=false;
 			var flashCursor;
 
 			function cursorFlash(){
@@ -86,7 +89,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 				clearInterval(flashCursor);
 				//var tagBeginning;
 				//var tagEnd;
-				if (completedLetters>=text.length){
+				if (completedLetters>=text.length || printingComplete){
 					sectionToFill.innerHTML=fullText;
 					clearInterval(repeatFunction);
 					//flashCursor=setInterval(cursorFlash,5);
@@ -170,28 +173,33 @@ consoleBox.style.overflowY="hidden";
 var desiredHeight = consoleBigHeight;
 var desiredWidth = consoleBigWidth;
 var consoleAspect = (desiredHeight-consoleSmallHeight)/(desiredWidth-consoleSmallWidth);
+	scaling=false;
 function scaleBox(){
-
+	var resizerator;
 	var width=parseInt(consoleBox.style.width);
 	var height=parseInt(consoleBox.style.height);
-
-	var resizerator=setInterval(resize, 0.5);
-	function resize(){
-		if (!boxIsScaled){
+	
+	if (boxIsScaled) resizerator=setInterval(shrink, 1);
+	else resizerator=setInterval(grow, 1);
+	
+	function grow(){
 			desiredHeight=consoleBigHeight;
 			desiredWidth=consoleBigWidth;
 			if (width<desiredWidth && height<desiredHeight){
-				width+=2; height+=2*consoleAspect;
+				width+=4; height+=4*consoleAspect;
 				consoleBox.style.width=width+"px";
 				consoleBox.style.height=height+"px";
+				scaling=true;
 			}
 			else if (width<desiredWidth){
-				width+=2;
+				width+=4;
 				consoleBox.style.width=width+"px";
+				scaling=true;
 			}
 			else if (height<desiredHeight){
-				height+=1;
+				height+=4;
 				consoleBox.style.height=height+"px";
+				scaling=true;
 			}
 			else{
 				boxIsScaled=true;
@@ -199,9 +207,11 @@ function scaleBox(){
 				document.getElementById("consoleArea").innerHTML="";
 				consoleBox.style.overflowY="auto";
 				fillSection(info);
+				scaling=false;
 			}
 		}
-		else if (boxIsScaled){
+		
+		function shrink(){
 			desiredHeight=75;
 			desiredWidth=75;
 
@@ -214,30 +224,34 @@ function scaleBox(){
 			clearInterval(flashCursor);
 			cursor.style.opacity=0;
 			document.getElementById("consoleArea").innerHTML="Navigate";
+			printingComplete=true;
 			if (width>desiredWidth && height>desiredHeight){
-				width-=2; height-=2*consoleAspect;
+				width-=4; height-=4*consoleAspect;
 				consoleBox.style.width=width+"px";
 				consoleBox.style.height=height+"px";
+				scaling=true;
 			}
 			else if (width>desiredWidth){
-				width-=2;
+				width-=4;
 				consoleBox.style.width=width+"px";
+				scaling=true;
 			}
 			else if (height>desiredHeight){
-				height-=1;
+				height-=4;
 				consoleBox.style.height=height+"px";
+				scaling=true;
 			}
 			else{
 				boxIsScaled=false;
 				clearInterval(repeatFunction);
 				clearInterval(resizerator);
 				consoleBox.style.overflowY="hidden";
-
+				scaling=false;
+				document.getElementById("consoleArea").innerHTML="Navigate";
 			}
 
 
 		}
-
+ //		while (scaling) document.getElementById("consoleArea").innerHTML="";
+//		while (!boxIsScaled) document.getElementById("consoleArea").innerHTML="Navigate";
 	}
-
-}
