@@ -32,3 +32,20 @@ Welcome to the ToDo
   -get mouse over to work nicely and fix the bug that happens if you open and close the
    navigator while it is still printing text (this will take care of the issue that when
    you click on a link it closes the navigator).
+4. Team page
+	-stick to similar format as last year
+	-peter and panayota at top
+	-everyone else in a slightly offset grid such that we have the picture and username one above the other
+	 and the text is on the right for pictures on the left and on the left for pictures on the right
+	-once you mouse over, the picture turns into the gif and the username turns into the name
+5. About us
+	-mostly done for us, perhaps a picture slide show of the school and the robotics work rooms
+6. gallery
+	-just a bunch of pictures in a grid and if you click on one it will go full screen or something
+7. robot
+	-We have a 3d model of it and we might get it interactively working (user can spin and zoom)
+	-short description written for us
+8. Video
+	-a page with simply the video
+9. game
+	-A animation was created for us and some text was written
