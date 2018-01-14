@@ -39,7 +39,7 @@ function numberLines(){
 	var htmlNumbar="";
 
 	for (i=1; i<=numberOfLines; i++) htmlNumbar += `${i}<br>`;
-	
+
 	document.getElementById("numbar").innerHTML=htmlNumbar;
 	numbar.style.bottom=0+"px";
 	if (heightOfContent>windowHeight) numbar.style.height=heightOfContent+"px";
@@ -57,7 +57,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 var printingComplete;
 
 		function fillSection(text){
-			
+
 			var repeatFunction=setInterval(addNextLetter, 10);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
@@ -150,7 +150,7 @@ var printingComplete;
 			newDir=newDir.replace("\"aSecond\"","\"aThird\"");
 			newDir=newDir.replace("\"bSecond\"","\"bThird\"");
 			newDir=newDir.replace("\"cSecond\"","\"cThird\"");
-			currentDir=newDir;	
+			currentDir=newDir;
 			fillSection(`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`);
 		}
 
@@ -178,10 +178,10 @@ function scaleBox(){
 	var resizerator;
 	var width=parseInt(consoleBox.style.width);
 	var height=parseInt(consoleBox.style.height);
-	
+
 	if (boxIsScaled) resizerator=setInterval(shrink, 1);
 	else resizerator=setInterval(grow, 1);
-	
+
 	function grow(){
 			desiredHeight=consoleBigHeight;
 			desiredWidth=consoleBigWidth;
@@ -210,7 +210,7 @@ function scaleBox(){
 				scaling=false;
 			}
 		}
-		
+
 		function shrink(){
 			desiredHeight=75;
 			desiredWidth=75;
