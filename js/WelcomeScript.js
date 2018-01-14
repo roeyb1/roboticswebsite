@@ -118,3 +118,10 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			setTimeout(function(){window.location=url}, 4000);
 			clearInterval(flashCursor);
 		}
+
+/*
+if ((window.innerHeignt > window.innerWidth){
+	backgroundSize = window.innerWidth;
+} else {
+	backgroundSize = window.innerHeignt;
+}
