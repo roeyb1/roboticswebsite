@@ -124,4 +124,4 @@ if ((window.innerHeignt > window.innerWidth){
 	backgroundSize = window.innerWidth;
 } else {
 	backgroundSize = window.innerHeignt;
-}
+}*/
