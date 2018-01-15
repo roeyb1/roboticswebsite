@@ -122,7 +122,10 @@ body {
 	font-family: 'Inconsolata',monospace;
 	clear:both;
 	left:0px;
-	padding-top:50px;
+	padding-bottom: 20px;
+	padding-top: 100px;
+	text-align: center;
+
 	}
 
 /*Team page styles*/
