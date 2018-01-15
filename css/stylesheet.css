@@ -54,7 +54,7 @@ body {
 	color: #93a1a1;
 	text-align:center;
 	font-size:24pt;
-	line-height:40pt;
+	line-height:28pt;
 	position:relative;
 	//top:15pt;
 	clear:both;
@@ -65,7 +65,7 @@ body {
 	padding-left:5px;
 	padding-right:5px;
 	font-size:16pt;
-	padding-top:10%;
+	padding-top:5%;
 	//padding-bottom:30%;
 	font-family: 'Inconsolata',monospace;
 }
@@ -94,7 +94,7 @@ body {
 	height:517px;
 	position: relative;
 	padding-left:5px;
-	padding-right:100px;
+	padding-right:70px;
 }
 
 .homeImageContainerLeft{
@@ -102,7 +102,7 @@ body {
 	width:517px;
 	height:517px;
 	position: relative;
-	padding-left:100px;
+	padding-left:70px;
 	padding-right:5px;
 }
 
@@ -176,7 +176,14 @@ body {
 	font-size:16pt;
 	font-family: 'Inconsolata',monospace;
 }
+
 /*General*/
+
+.footer {
+	background-color:#ffffff;
+
+}
+
 #numbar{
 	background-color: #002b36;
 	font-family: 'Anonymous Pro', monospace;
