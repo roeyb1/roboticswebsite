@@ -10,12 +10,12 @@
 	<div id="numbar"></div>
 	<div id="content">
 		<p class="teamHeader">Lead Hackers</p>
-		<div id="mattBox", class="teamInfoLeft", onmouseover="setGIF(id)", onmouseleave="setJPG(id)">
+		<div id="benjaminBox", class="teamInfoLeft", onmouseover="setGIF(id)", onmouseleave="setJPG(id)", onload="sedJPG(id)">
 			<div class="userNameAndImage">
 				<div class="userImage">
-					<img id="matt" src="images/matt.png" width=256px>
+					<img id="benjamin" src="pngs/benjamin.png" width=256px>
 				</div>
-				<div id="mattBoxText" class="userName">@testUser</div>
+				<div id="benjaminBoxText" class="userName">@testUser</div>
 			</div>
 			<div class="userContent">
 			 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque at ante consequat lacinia. Aenean nec gravida sem. Proin vel ante tellus. Nullam cursus laoreet varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean consequat, massa eget facilisis imperdiet, tellus neque pharetra nunc, et aliquam diam tortor in ante. Phasellus ornare lorem purus, rutrum pellentesque sapien dapibus eget. Aenean convallis varius finibus. Fusce in lacinia urna. Vivamus imperdiet tellus sodales eros volutpat, et hendrerit justo volutpat. Nullam eget lacus eget odio pretium lacinia pellentesque faucibus nisi. 
@@ -24,7 +24,7 @@
 		<div class="teamInfoRight">
 				<div class="userNameAndImage">
 				<div class="userImage">
-					<img src="images/benjamin.png" width=256px>
+					<img src="pngs/benjamin.png" width=256px>
 				</div>
 				<div class="userName">@testUser</div>
 			</div>
@@ -49,19 +49,40 @@
 	</div>
 	<script src="../js/RoboticsStuff.js"></script>
 	<script>
+	var teamMembers=[
+			{ id:		"benjamin",
+			  name: 	"@BenjaminRudski",
+			  hackName: "@testUser"
+			}
+			]
+			
+	function getTeamMemberById(id){
+		var selectedTeamMember;
+		for (var i=0; i<teamMembers.length; i++){
+			if (id==teamMembers[i].id){
+				selectedTeamMember=teamMembers[i];
+				break;
+			}
+			else continue;
+		}
+		
+		return selectedTeamMember;
+	}
 	function setGIF(id){
 		var imgId=id.slice(0,-3);
 		document.getElementById(imgId).src=`gifs/${imgId}.gif`;
 		
 		var textId=id+"Text";
-		document.getElementById(textId).innerHTML="Matthew Behr";
+		var teamMember=getTeamMemberById(imgId);
+		document.getElementById(textId).innerHTML=teamMember.name;
 	}
 	function setJPG(id){
 		var imgId=id.slice(0,-3);
-		document.getElementById(imgId).src=`images/${imgId}.png`;
+		document.getElementById(imgId).src=`pngs/${imgId}.png`;
 		
 		var textId=id+"Text";
-		document.getElementById(textId).innerHTML="@TestUser";
+		var teamMember=getTeamMemberById(imgId);
+		document.getElementById(textId).innerHTML=teamMember.hackName;
 	}
 	</script>
 </body>
