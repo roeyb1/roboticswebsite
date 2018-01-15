@@ -66,7 +66,7 @@ body {
 	padding-right:5px;
 	font-size:16pt;
 	padding-top:5%;
-	//padding-bottom:30%;
+	/*padding-bottom:30%;*/
 	font-family: 'Inconsolata',monospace;
 }
 
@@ -110,6 +110,15 @@ body {
 	width:512px;
 	height:512px;
 }
+
+.footer{
+	position: absolute;
+	width:100%;
+	bottom:0px;
+	background-color:#ffffff;
+	font-family: 'Inconsolata',monospace;
+	clear:both;
+	}
 
 /*Team page styles*/
 .teamHeader{
