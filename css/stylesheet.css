@@ -35,6 +35,82 @@ body {
 	right:0px;
 	overflow-x:hidden;
 }
+
+/* Home page styling */
+.homeHeader {
+	font-family: 'Inconsolata',monospace;
+	color: #e5f0ff;
+	text-align:center;
+	font-size:48pt;
+	line-height:40pt;
+	position:relative;
+	top:15pt;
+	clear:both;
+
+}
+
+.homeSubHeader {
+	font-family: 'Inconsolata',monospace;
+	color: #93a1a1;
+	text-align:center;
+	font-size:24pt;
+	line-height:40pt;
+	position:relative;
+	//top:15pt;
+	clear:both;
+
+}
+
+.homeContent{
+	padding-left:5px;
+	padding-right:5px;
+	font-size:16pt;
+	padding-top:10%;
+	//padding-bottom:30%;
+	font-family: 'Inconsolata',monospace;
+}
+
+.homeInfoLeft {
+	float: left;
+	width:85%;
+	left: 3%;
+	position:relative;
+	text-align:center;
+	clear:right;
+}
+
+.homeInfoRight{
+	float: right;
+	width:85%;
+	right:3%;
+	position: relative;
+	text-align:center;
+	clear:left;
+}
+
+.homeImageContainerRight{
+	float:inherit;
+	width:517px;
+	height:517px;
+	position: relative;
+	padding-left:5px;
+	padding-right:100px;
+}
+
+.homeImageContainerLeft{
+	float:inherit;
+	width:517px;
+	height:517px;
+	position: relative;
+	padding-left:100px;
+	padding-right:5px;
+}
+
+.homeImage{
+	width:512px;
+	height:512px;
+}
+
 /*Team page styles*/
 .teamHeader{
 	font-family: 'Inconsolata',monospace;
