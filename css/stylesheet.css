@@ -64,10 +64,11 @@ body {
 .homeContent{
 	padding-left:5px;
 	padding-right:5px;
-	font-size:16pt;
-	padding-top:5%;
+	font-size:22pt;
+	padding-top:11%;
 	/*padding-bottom:30%;*/
 	font-family: 'Inconsolata',monospace;
+	line-height: 30px;
 }
 
 .homeInfoLeft {
@@ -75,8 +76,9 @@ body {
 	width:85%;
 	left: 3%;
 	position:relative;
-	text-align:center;
+	text-align:justify;
 	clear:right;
+	padding-bottom: 175px;
 }
 
 .homeInfoRight{
@@ -84,8 +86,9 @@ body {
 	width:85%;
 	right:3%;
 	position: relative;
-	text-align:center;
+	text-align:justify;
 	clear:left;
+	padding-bottom: 175px;
 }
 
 .homeImageContainerRight{
@@ -93,7 +96,7 @@ body {
 	width:517px;
 	height:517px;
 	position: relative;
-	padding-left:5px;
+	padding-left:10%;
 	padding-right:70px;
 }
 
@@ -103,7 +106,7 @@ body {
 	height:517px;
 	position: relative;
 	padding-left:70px;
-	padding-right:5px;
+	padding-right:10%;
 }
 
 .homeImage{
@@ -115,7 +118,7 @@ body {
 	position: absolute;
 	width:100%;
 	bottom:0px;
-	background-color: rgba(0,0,0,0);
+	background-color: #002b36;
 	font-family: 'Inconsolata',monospace;
 	clear:both;
 	left:0px
