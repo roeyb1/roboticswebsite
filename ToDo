@@ -8,23 +8,9 @@ Welcome to the ToDo
   -fix the links once you click
   -slow down the typing of the larger words
 2. Home page
-  a. page tittle
-    -increase the font size a little bit
-    -move it down from the top of the page so its more spaced out
-    -add under it a 1 to 2 line description of the page, not that it should
-     not be wider then 2 times the width of marianonymous and if it is push
-     it to the next line (font sixe should be slightly smaller then title)
-    -add if possible a blinking cursor after the title
-  b. content
-    -work on the divisions of the page (i.e. text on one side and img on the other)
-     note that we want everything to look as clean as possible so space is your friend
-     DO NOT OVERCROUD
-    -if page rescales and becomes to small for this format we should switch it to a
-     img and text under so that it never overcrouds
-  c. MISC
-    -add the logo as a favicon or whatever its called such that it appears in the tab
-     selector
-    -add a small en/fr button somewhere on the bottom and get it to work
+  work on rescale
+  input text 
+  fr/en button
 3. Navigator
   -get cursor to blink when it is in small mode
   -either move cursor inline with the last line of printed text (i.e. no line break)
@@ -33,11 +19,7 @@ Welcome to the ToDo
    navigator while it is still printing text (this will take care of the issue that when
    you click on a link it closes the navigator).
 4. Team page
-	-stick to similar format as last year
-	-peter and panayota at top
-	-everyone else in a slightly offset grid such that we have the picture and username one above the other
-	 and the text is on the right for pictures on the left and on the left for pictures on the right
-	-once you mouse over, the picture turns into the gif and the username turns into the name
+	space out from sides and input text
 5. About us
 	-mostly done for us, perhaps a picture slide show of the school and the robotics work rooms
 6. gallery
