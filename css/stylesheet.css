@@ -118,10 +118,11 @@ body {
 	position: absolute;
 	width:100%;
 	bottom:0px;
-	background-color: #002b36;
+/*	background-color: (0,0,0,0);/*#002b36;*/
 	font-family: 'Inconsolata',monospace;
 	clear:both;
-	left:0px
+	left:0px;
+	padding-top:50px;
 	}
 
 /*Team page styles*/
@@ -192,11 +193,6 @@ body {
 }
 
 /*General*/
-
-.footer {
-	background-color:#ffffff;
-
-}
 
 #numbar{
 	background-color: #002b36;
