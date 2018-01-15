@@ -35,7 +35,61 @@ body {
 	right:0px;
 	overflow-x:hidden;
 }
+/*Team page styles*/
+.teamHeader{
+	font-family: 'Inconsolata',monospace;
+	color: #ffffff;
+	text-align:center;
+	font-size:36pt;
+	line-height:40pt;
+	position:relative;
+	top:15pt;
 
+}
+
+.teamInfoLeft{
+	/*display:inline-block;*/
+	float: left;
+	width:45%;
+	left: 3%;
+	height:400px;
+	border: 1px #ffffff solid;
+	/*top: 5px;*/
+	position:relative;
+	background-color:#000000;
+	}
+
+.teamInfoRight{
+	/*display:inline-block;*/
+	float: right;
+	right:3%;
+	width:45%;
+	height:400px;
+	/*top: 5px;*/
+	border: 1px #ffffff solid;
+	position: relative;
+	background-color:#000000;
+}
+.userNameAndImage{
+	float:inherit;
+	width:256px;
+	height:300px;
+	position: relative;
+}
+.userImage{
+	width:256px;
+	height:256px;
+}
+
+.userName{
+	text-align:center;
+	font-family:'Anonymous Pro', monospace;
+	font-size:24pt;
+}
+.userContent{
+
+}
+/*General*/
 #numbar{
 	background-color: #002b36;
 	font-family: 'Anonymous Pro', monospace;
