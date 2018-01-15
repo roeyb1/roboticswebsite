@@ -115,7 +115,7 @@ body {
 	position: absolute;
 	width:100%;
 	bottom:0px;
-	background-color:#ffffff;
+	background-color: rgba(0,0,0,0);
 	font-family: 'Inconsolata',monospace;
 	clear:both;
 	left:0px
