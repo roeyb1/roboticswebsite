@@ -137,19 +137,15 @@ body {
 }
 
 .footer{
-	width:98%;
+	position: absolute;
+	width:100%;
 	bottom:0px;
 	/*	background-color: (0,0,0,0);/*#002b36;*/
 	font-family: 'Inconsolata',monospace;
 	clear:both;
 	left:0px;
-<<<<<<< HEAD
-	/*! margin-top: 50px; */
-	padding-bottom: 20px;
-=======
 	padding-bottom: 20px;
 	padding-top: 100px;
->>>>>>> 61ae14c405863dba32b17b597f63f0a8393fb8e4
 	text-align: center;
 
 	}
@@ -195,15 +191,7 @@ body {
 	/*	background-color:#000000;*/
 	text-align:right;
 	clear:left;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	padding-block-end: 10px;
-=======
 	padding-right: 100px;
->>>>>>> 61ae14c405863dba32b17b597f63f0a8393fb8e4
-=======
-	padding-right: 100px;
->>>>>>> 61ae14c405863dba32b17b597f63f0a8393fb8e4
 }
 .userNameAndImage{
 	float:inherit;
@@ -219,24 +207,15 @@ body {
 }
 
 .userName{
-	text-align:inherit;
+	text-align:center;
 	font-family:'Anonymous Pro', monospace;
-	font-size:14pt;
+	font-size:18pt;
 	top:5px;
 }
 .userContent{
-<<<<<<< HEAD
-<<<<<<< HEAD
-	padding-left:5px;
-	padding-right:5px;
-	font-size:12pt;
-=======
-=======
->>>>>>> 61ae14c405863dba32b17b597f63f0a8393fb8e4
 	padding-left:25%;
 	padding-right:25%;
 	font-size:16pt;
->>>>>>> 61ae14c405863dba32b17b597f63f0a8393fb8e4
 	font-family: 'Inconsolata',monospace;
 	padding-bottom:10px;
 }
