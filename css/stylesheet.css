@@ -61,7 +61,6 @@ body {
 
 }
 
-
 .homeContent{
 	padding-left:20%;
 	padding-right:20%;
@@ -71,7 +70,6 @@ body {
 	font-family: 'Inconsolata',monospace;
 	line-height: 30px;
 }
-
 
 .homeInfoLeft {
 	float: left;
@@ -120,7 +118,7 @@ body {
 	position: absolute;
 	width:100%;
 	bottom:0px;
-/*	background-color: (0,0,0,0);/*#002b36;*/
+	/*	background-color: (0,0,0,0);/*#002b36;*/
 	font-family: 'Inconsolata',monospace;
 	clear:both;
 	left:0px;
@@ -149,11 +147,11 @@ body {
 	float: left;
 	width:60%;
 	left: 3%;
-/*	height:400px;*/
-/*	border: 1px #ffffff solid;*/
+	/*	height:400px;*/
+	/*	border: 1px #ffffff solid;*/
 	/*top: 5px;*/
 	position:relative;
-/*	background-color:#000000;*/
+	/*	background-color:#000000;*/
 	text-align:left;
 	clear:right;
 	padding-left: 100px;
@@ -164,11 +162,11 @@ body {
 	float: right;
 	right:3%;
 	width:60%;
-/*	height:400px;*/
+	/*	height:400px;*/
 	/*top: 5px;*/
-/*	border: 1px #ffffff solid;*/
+	/*	border: 1px #ffffff solid;*/
 	position: relative;
-/*	background-color:#000000;*/
+	/*	background-color:#000000;*/
 	text-align:right;
 	clear:left;
 	padding-right: 100px;
@@ -198,6 +196,41 @@ body {
 	font-size:16pt;
 	font-family: 'Inconsolata',monospace;
 	padding-bottom:10px;
+}
+
+/* Gallery */
+
+.galleryImageContiner {
+	height:512px;
+	width:100%
+}
+
+div.galleryImageLeft {
+	margin-top:10%;
+	margin-left:10%;
+	float:left;
+
+	max-width:512px;
+}
+
+div.galleryImageRight {
+	margin-top:10%;
+	margin-right:10%;
+	float:right;
+
+	max-width: 512px;
+}
+
+img.galleryLeft {
+	max-width:100%;
+	height:auto;
+	width:auto;
+}
+
+img.galleryRight {
+	max-width:100%;
+	height:auto;
+	width:auto;
 }
 
 /*General*/
