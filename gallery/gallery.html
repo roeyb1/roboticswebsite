@@ -10,66 +10,66 @@
 	<div id="numbar"></div>
 	<div id="content">
     <p class="header">Gallery</p>
-    <div id="vidContainer" align="center" style="margin-top:100px;">
-
-      <div style="height:480px;width:853px;box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.6), 0 8px 30px 0 rgba(0, 0, 0, 0.19);">
-        <iframe width="854" height="480" src="https://www.youtube.com/embed/1mhVPOwVNho" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-    </div>
 
   <div class="galleryImageContainer">
     <div class="galleryImageLeft">
-      <img src="images/gallery1.jpg" class="galleryP">
+      <img id="gallery1"  src="images/gallery1.jpg" class="galleryP" onclick="expandImage(id)">
     </div>
     <div class="galleryImage">
-      <img src="images/gallery2.jpg" class="galleryL">
+      <img id="gallery2" src="images/gallery2.jpg" class="galleryL"  onclick="expandImage(id)">
     </div>
     <div class="galleryImage">
-      <img src="images/gallery3.jpg" class="galleryP">
+      <img id="gallery3" src="images/gallery3.jpg" class="galleryP" onclick="expandImage(id)">
     </div>
   </div>
 
   <div class="galleryImageContainer">
     <div class="galleryImageLeft">
-      <img src="images/gallery4.jpg" class="galleryP">
+      <img id="gallery4" src="images/gallery4.jpg" class="galleryP" onclick="expandImage(id)">
     </div>
     <div class="galleryImage">
-      <img src="images/gallery5.jpg" class="galleryP">
+      <img id="gallery5" src="images/gallery5.jpg" class="galleryP" onclick="expandImage(id)">
     </div>
     <div class="galleryImage">
-      <img src="images/gallery6.jpg" class="galleryL">
-    </div>
-  </div>
-  <div class="galleryImageContainer">
-
-  <div class="galleryImageContainer">
-    <div class="galleryImageLeft">
-      <img src="images/gallery8.jpg" class="galleryP">
-    </div>
-    <div class="galleryImage">
-      <img src="images/gallery9.jpg" class="galleryP">
-    </div>
-    <div class="galleryImage">
-      <img src="images/gallery10.jpg" class="galleryL">
+      <img id="gallery6" src="images/gallery6.jpg" class="galleryL" onclick="expandImage(id)">
     </div>
   </div>
 
   <div class="galleryImageContainer">
     <div class="galleryImageLeft">
-      <img src="images/gallery11.jpg" class="galleryP">
+      <img id="gallery8" src="images/gallery8.jpg" class="galleryP" onclick="expandImage(id)">
     </div>
     <div class="galleryImage">
-      <img src="images/gallery12.jpg" class="galleryL">
+      <img id="gallery9" src="images/gallery9.jpg" class="galleryP" onclick="expandImage(id)">
     </div>
     <div class="galleryImage">
-      <img src="images/gallery13.jpg" class="galleryL">
+      <img id="gallery10" src="images/gallery10.jpg" class="galleryL" onclick="expandImage(id)">
     </div>
   </div>
 
-	<div id="console">
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery11" src="images/gallery11.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery12" src="images/gallery12.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery13" src="images/gallery13.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+  </div>
+  
+  		<div class="footer", style="padding-top:50px">
+			 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque at ante consequat lacinia. Aenean nec gravida sem. Proin vel ante tellus. Nullam cursus laoreet varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean consequat, massa eget facilisis imperdiet, tellus neque pharetra nunc, et aliquam diam tortor in ante. Phasellus ornare lorem purus, rutrum pellentesque sapien dapibus eget. Aenean convallis varius finibus. Fusce in lacinia urna. Vivamus imperdiet tellus sodales eros volutpat, et hendrerit justo volutpat. Nullam eget lacus eget odio pretium lacinia pellentesque faucibus nisi.
+		</div>
+	<div id="imageViewer" onclick="dismissImageViewer()">
+  		<img id="featuredImage" src="" width=500 height=500>
+	</div>
+	<div id="console", onmouseenter="scaleBox(event)", onmouseleave="scaleBox(event)">
 		<div id="consoleArea"></div>
 		<div id="cursor">|</div>
 	</div>
 	<script src="../js/RoboticsStuff.js"></script>
+	<script src="../js/galleryScript.js"></script>
 </body>
 </html>

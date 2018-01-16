@@ -232,6 +232,27 @@ body {
 
 /* Gallery */
 
+#imageViewer{
+	position:fixed;
+/*	width:100%;
+	height:100%;*/
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	background-color:rgba(0,0,0,0.5);
+	visibility:hidden;
+}
+
+#featuredImage{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:5%;
+	margin-bottom:auto;
+	display:block;
+	border:1px solid #ffffff;
+}
+
 .galleryImageContainer {
 	height:400px;
 	width:1500px;
