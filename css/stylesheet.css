@@ -233,13 +233,13 @@ body {
 }
 
 .galleryImageContiner {
-	height:512px;
+	height:400px;
 	width:100%;
 }
 
 div.galleryImageLeft {
 	margin-top:5%;
-	margin-left:10%;
+	margin-left:13%;
 	float:left;
 	overflow:hidden;
 
@@ -255,19 +255,22 @@ div.galleryImage {
 
 	width:400px;
 	height:400px;
+
+	border: 2px solid #000000;
 }
 
-img.galleryLeft {
+img.galleryP {
 	max-width:100%;
 	height:auto;
 	width:auto;
 }
 
-img.galleryRight {
-	max-width:100%;
+img.galleryL {
+	max-height:100%;
 	height:auto;
 	width:auto;
 }
+
 
 /*General*/
 
