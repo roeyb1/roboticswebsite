@@ -184,43 +184,43 @@ var consoleXToTrigger;
 	
 var maxYToTrigger;
 var maxXToTrigger;
+var width;
+var height;
+var resizerator;
 
+var scalingUp=false;
+var abortingResize=false;
 
 function scaleBox(event){
 	var locationX=event.clientX;
 	var locationY=event.clientY;
 	console.log(locationX,locationY);
-	var resizerator;
-	var width=parseInt(consoleBox.style.width);
-	var height=parseInt(consoleBox.style.height);
+
+	width=parseInt(consoleBox.style.width);
+	height=parseInt(consoleBox.style.height);
 	
 	screenWidth=window.innerWidth;
 	screenHeight=window.innerHeight;
 	
-	consoleYToTrigger=parseInt(window.innerHeight)*0.04+consoleBigHeight;
-	consoleXToTrigger=parseInt(window.innerWidth)*0.04+consoleBigWidth;
+	consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
+		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
 	
 	maxYToTrigger=screenHeight-consoleYToTrigger;
 	maxXToTrigger=screenWidth-consoleXToTrigger;
+	clearInterval(resizerator);
 	
-	if (scaling||boxIsScaled){
-		consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
-		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
-		
-		maxYToTrigger=screenHeight-consoleYToTrigger;
-		maxXToTrigger=screenWidth-consoleXToTrigger;
-		
-		if (locationX>=maxXToTrigger||locationY>=maxYToTrigger){
-			clearInterval(resizerator);
+		if ((boxIsScaled||scaling)&&(locationX>=maxXToTrigger||locationY>=maxYToTrigger)){
+			abortingResize=true;
 			resizerator=setInterval(shrink, 1);
 			}
-		else;
+		else{
+			resizerator=setInterval(grow, 1);
+			abortingResize=false;
 		}
-	else{
-		if (boxIsScaled && (locationX<maxXToTrigger||locationY<maxYToTrigger)) resizerator=setInterval(shrink, 1);
-		else resizerator=setInterval(grow, 1);
-	}
+	
 	function grow(){
+			width=parseInt(consoleBox.style.width);
+			height=parseInt(consoleBox.style.height);
 			desiredHeight=consoleBigHeight;
 			desiredWidth=consoleBigWidth;
 			if (width<desiredWidth && height<desiredHeight){
@@ -252,7 +252,8 @@ function scaleBox(event){
 		function shrink(){
 			desiredHeight=75;
 			desiredWidth=75;
-
+			width=parseInt(consoleBox.style.width);
+			height=parseInt(consoleBox.style.height);
 			/*var charactersRemovedFromText=-1;
 
 			var consoleArea=document.getElementById("consoleArea");
@@ -292,4 +293,4 @@ function scaleBox(event){
 		}
  //		while (scaling) document.getElementById("consoleArea").innerHTML="";
 //		while (!boxIsScaled) document.getElementById("consoleArea").innerHTML="Navigate";
-	}
+}
