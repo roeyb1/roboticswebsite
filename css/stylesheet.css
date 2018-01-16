@@ -164,17 +164,15 @@ body {
 
 /*Team page styles*/
 .teamHeader{
-	font-family: 'Bitter', serif;
-	color: #e5f0ff;
-	text-align:center;
-	font-size:36pt;
-	line-height:40pt;
-	position:relative;
-	top:10pt;
-	clear:both;
-	padding-bottom: 30px;
-
-}
+		font-family: 'Inconsolata',monospace;
+		color: #e5f0ff;
+		text-align:center;
+		font-size:36pt;
+		line-height:20pt;
+		position:relative;
+		top:5pt;
+		clear:both;
+	}
 
 .teamInfoLeft{
 	/*display:inline-block;*/
