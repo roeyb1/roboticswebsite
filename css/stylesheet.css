@@ -238,19 +238,23 @@ body {
 }
 
 div.galleryImageLeft {
-	margin-top:10%;
-	margin-left:20%;
+	margin-top:5%;
+	margin-left:25%;
 	float:left;
+	overflow:hidden;
 
-	max-width:400px;
+	width:400px;
+	height:400px;
 }
 
 div.galleryImageRight {
-	margin-top:10%;
-	margin-right:20%;
+	margin-top:5%;
+	margin-right:25%;
 	float:right;
+	overflow:hidden;
 
-	max-width: 400px;
+	width:400px;
+	height:400px;
 }
 
 img.galleryLeft {
