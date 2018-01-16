@@ -1,5 +1,6 @@
 body{
-  background-image: url("logo.png")
+  background-image: url("logo.png");
+  font-family: "Inconsolata", monospace;
 }
 #console{
 	display:block;
