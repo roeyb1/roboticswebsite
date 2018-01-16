@@ -209,6 +209,10 @@ function scaleBox(event){
 	maxXToTrigger=screenWidth-consoleXToTrigger-1;
 	clearInterval(resizerator);
 	
+	//Change Big heigth and width based on window size:
+		if (screenWidth<1000) consoleBigWidth=275;
+		else;
+	
 		if ((boxIsScaled||scaling)&&(locationX<=maxXToTrigger||locationY<=maxYToTrigger)){
 			abortingResize=true;
 			resizerator=setInterval(shrink, 1);
