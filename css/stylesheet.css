@@ -234,7 +234,7 @@ body {
 
 /* Gallery */
 
-.homeHeader {
+.galleryHeader {
 	font-family: 'Inconsolata',monospace;
 	color: #e5f0ff;
 	text-align:center;
@@ -245,14 +245,15 @@ body {
 	clear:both;
 }
 
-.galleryImageContiner {
+.galleryImageContainer {
 	height:400px;
-	width:100%;
+	width:1500px;
+	margin:auto;
 }
 
 div.galleryImageLeft {
 	margin-top:5%;
-	margin-left:13%;
+	margin-left:100px;
 	float:left;
 	overflow:hidden;
 
@@ -262,7 +263,7 @@ div.galleryImageLeft {
 
 div.galleryImage {
 	margin-top:5%;
-	margin-left:5%;
+	margin-left: 60px;
 	float:left;
 	overflow:hidden;
 
