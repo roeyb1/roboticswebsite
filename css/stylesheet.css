@@ -164,17 +164,15 @@ body {
 
 /*Team page styles*/
 .teamHeader{
-	font-family: 'Bitter', serif;
-	color: #e5f0ff;
-	text-align:center;
-	font-size:36pt;
-	line-height:40pt;
-	position:relative;
-	top:10pt;
-	clear:both;
-	padding-bottom: 30px;
-
-}
+		font-family: 'Inconsolata',monospace;
+		color: #e5f0ff;
+		text-align:center;
+		font-size:36pt;
+		line-height:20pt;
+		position:relative;
+		top:5pt;
+		clear:both;
+	}
 
 .teamInfoLeft{
 	/*display:inline-block;*/
@@ -335,8 +333,8 @@ div.container {
 	font-family: 'Anonymous Pro', monospace;
 	color:#ffffff;
 	background-color: #002b36;
-	/*width:25px;*/
-	/*height:25px;*/
+	width:75px;
+	height:75px;
 	position:fixed;
 	overflow-y:hidden;
 	overflow-x:hidden;

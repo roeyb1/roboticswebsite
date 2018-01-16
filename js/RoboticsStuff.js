@@ -205,11 +205,11 @@ function scaleBox(event){
 	consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
 		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
 	
-	maxYToTrigger=screenHeight-consoleYToTrigger;
-	maxXToTrigger=screenWidth-consoleXToTrigger;
+	maxYToTrigger=screenHeight-consoleYToTrigger-1;
+	maxXToTrigger=screenWidth-consoleXToTrigger-1;
 	clearInterval(resizerator);
 	
-		if ((boxIsScaled||scaling)&&(locationX>=maxXToTrigger||locationY>=maxYToTrigger)){
+		if ((boxIsScaled||scaling)&&(locationX<=maxXToTrigger||locationY<=maxYToTrigger)){
 			abortingResize=true;
 			resizerator=setInterval(shrink, 1);
 			}
