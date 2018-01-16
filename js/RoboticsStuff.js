@@ -203,9 +203,18 @@ function scaleBox(event){
 	maxYToTrigger=screenHeight-consoleYToTrigger;
 	maxXToTrigger=screenWidth-consoleXToTrigger;
 	
-	if (scaling){ 
-		if (locationX<maxXToTrigger||locationY<maxYToTrigger) resizerator=setInterval(shrink, 1); //ADJUST TO DYNAMIC WITH CURRENT SIZE!!!
-		//else resizerator=setInterval(grow, 1);	
+	if (scaling||boxIsScaled){
+		consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
+		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
+		
+		maxYToTrigger=screenHeight-consoleYToTrigger;
+		maxXToTrigger=screenWidth-consoleXToTrigger;
+		
+		if (locationX>=maxXToTrigger||locationY>=maxYToTrigger){
+			clearInterval(resizerator);
+			resizerator=setInterval(shrink, 1);
+			}
+		else;
 		}
 	else{
 		if (boxIsScaled && (locationX<maxXToTrigger||locationY<maxYToTrigger)) resizerator=setInterval(shrink, 1);
