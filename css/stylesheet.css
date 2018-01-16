@@ -221,6 +221,17 @@ body {
 
 /* Gallery */
 
+.homeHeader {
+	font-family: 'Inconsolata',monospace;
+	color: #e5f0ff;
+	text-align:center;
+	font-size:48pt;
+	line-height:40pt;
+	position:relative;
+	top:15pt;
+	clear:both;
+}
+
 .galleryImageContiner {
 	height:512px;
 	width:100%
