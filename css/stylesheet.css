@@ -239,18 +239,18 @@ body {
 
 div.galleryImageLeft {
 	margin-top:10%;
-	margin-left:10%;
+	margin-left:20%;
 	float:left;
 
-	max-width:512px;
+	max-width:400px;
 }
 
 div.galleryImageRight {
 	margin-top:10%;
-	margin-right:10%;
+	margin-right:20%;
 	float:right;
 
-	max-width: 512px;
+	max-width: 400px;
 }
 
 img.galleryLeft {
