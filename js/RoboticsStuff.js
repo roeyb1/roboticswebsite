@@ -205,7 +205,8 @@ function scaleBox(event){
 	
 	if (scaling){ 
 		if (locationX<maxXToTrigger||locationY<maxYToTrigger) resizerator=setInterval(shrink, 1); //ADJUST TO DYNAMIC WITH CURRENT SIZE!!!
-		//else resizerator=setInterval(grow, 1);	}
+		//else resizerator=setInterval(grow, 1);	
+		}
 	else{
 		if (boxIsScaled && (locationX<maxXToTrigger||locationY<maxYToTrigger)) resizerator=setInterval(shrink, 1);
 		else resizerator=setInterval(grow, 1);
