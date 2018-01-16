@@ -62,13 +62,35 @@ body {
 }
 
 .homeContent{
-	padding-left:20%;
-	padding-right:20%;
+	padding-left:10%;
+	padding-right:10%;
 	font-size:22pt;
-	padding-top: 3%;
+	padding-top: 0%;
 	/*padding-bottom:30%;*/
 	font-family: 'Inconsolata',monospace;
 	line-height: 30px;
+}
+
+.homeImageHeadLeft{
+	padding-left:0%;
+	padding-right:10%;
+	font-size:26pt;
+	padding-top: 16%;
+	padding-bottom:0%;
+	font-family: 'Bitter', serif;
+	line-height: 30px;
+	text-align: left;
+}
+
+.homeImageHeadRight{
+	padding-left:10%;
+	padding-right:0%;
+	font-size:26pt;
+	padding-top: 16%;
+	padding-bottom:0%;
+	font-family: 'Bitter', serif;
+	line-height: 30px;
+	text-align: right;
 }
 
 .homeInfoLeft {
@@ -76,9 +98,9 @@ body {
 	width:85%;
 	left: 3%;
 	position:relative;
-	text-align:justify;
+	text-align:left;
 	clear:right;
-	padding-bottom: 0px;
+	padding-bottom: 75px;
 }
 
 .homeInfoRight{
@@ -86,9 +108,9 @@ body {
 	width:85%;
 	right:3%;
 	position: relative;
-	text-align:justify;
+	text-align:right;
 	clear:left;
-	padding-bottom: 125px;
+	padding-bottom: 75px;
 }
 
 .homeImageContainerRight{
@@ -97,7 +119,7 @@ body {
 	height:517px;
 	position: relative;
 	padding-left:10%;
-	padding-right:70px;
+	padding-right:0px;
 }
 
 .homeImageContainerLeft{
@@ -105,7 +127,7 @@ body {
 	width:517px;
 	height:517px;
 	position: relative;
-	padding-left:70px;
+	padding-left:0px;
 	padding-right:10%;
 }
 
