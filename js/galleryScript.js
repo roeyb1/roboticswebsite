@@ -19,3 +19,29 @@ function dismissImageViewer(){
 	imageViewer.style.visibility="hidden";
 	featuredImage.src="";
 }
+
+var galleryContainers;
+
+function galleryResize(){
+	var windowWidth=window.innerWidth;
+	galleryContainers=document.getElementsByClassName("galleryImageContainer");
+	
+	if (windowWidth<500){
+			for (var i=0; i<galleryContainers.length;i++){
+				var container=galleryContainers[i];
+				container.style.marginLeft="10px";
+		}
+		}
+	else if (windowWidth<1000){
+			for (var i=0; i<galleryContainers.length;i++){
+				var container=galleryContainers[i];
+				container.style.marginLeft="50px";
+		}
+		}
+	else{
+			for (var i=0; i<galleryContainers.length;i++){
+				var container=galleryContainers[i];
+				container.style.marginLeft="100px";
+		}
+	}
+}
