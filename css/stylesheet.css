@@ -234,12 +234,12 @@ body {
 
 .galleryImageContiner {
 	height:512px;
-	width:100%
+	width:100%;
 }
 
 div.galleryImageLeft {
 	margin-top:5%;
-	margin-left:25%;
+	margin-left:10%;
 	float:left;
 	overflow:hidden;
 
@@ -247,10 +247,10 @@ div.galleryImageLeft {
 	height:400px;
 }
 
-div.galleryImageRight {
+div.galleryImage {
 	margin-top:5%;
-	margin-right:25%;
-	float:right;
+	margin-left:5%;
+	float:left;
 	overflow:hidden;
 
 	width:400px;
