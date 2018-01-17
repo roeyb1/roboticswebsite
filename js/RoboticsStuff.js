@@ -53,14 +53,15 @@ var repeatFunction;
 var flashCursor;
 var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString;
+		var language=en;
 		var info=`
 		Marianonymous Robotics [kernel 5.778-file:///home/website/.homepage.html4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br>
-		<a id=\"home\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../home/home_en.html\')\">home/</a><br>
-		<a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../game/game.html\')\">game/</a><br>
-		<a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../team/team.html\')\"> team/</a><br>
-		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../robot/robot.html\')\"> robot/</a><br>
-		<a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../gallery/gallery.html\')\">gallery/</a><br>
-		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../journal/journal.html\')\"> journal/</a><br>
+		<a id=\"home\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/home.html\')\">home/</a><br>
+		<a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/game.html\')\">game/</a><br>
+		<a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/team.html\')\"> team/</a><br>
+		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/robot.html\')\"> robot/</a><br>
+		<a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/gallery.html\')\">gallery/</a><br>
+		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/journal.html\')\"> journal/</a><br>
 		<span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 var printingComplete;
