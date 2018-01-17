@@ -53,7 +53,15 @@ var repeatFunction;
 var flashCursor;
 var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString;
-		var info="Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span>        <!--lag-->ls <br><a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../game/game.html\')\">game/</a><br><a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../team/team.html\')\"> team/</a><br><a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'robot/robot.html\')\"> robot/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> "
+		var info=`
+		Marianonymous Robotics [kernel 5.778-file:///home/website/.homepage.html4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br>
+		<a id=\"home\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../home/home_en.html\')\">home/</a><br>
+		<a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../game/game.html\')\">game/</a><br>
+		<a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../team/team.html\')\"> team/</a><br>
+		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../robot/robot.html\')\"> robot/</a><br>
+		<a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../gallery/gallery.html\')\">gallery/</a><br>
+		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../journal/journal.html\')\"> journal/</a><br>
+		<span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 var printingComplete;
 
@@ -181,7 +189,7 @@ var screenHeight;
 var consoleYToTrigger;
 var consoleXToTrigger;
 
-	
+
 var maxYToTrigger;
 var maxXToTrigger;
 var width;
@@ -198,21 +206,21 @@ function scaleBox(event){
 
 	width=parseInt(consoleBox.style.width);
 	height=parseInt(consoleBox.style.height);
-	
+
 	screenWidth=window.innerWidth;
 	screenHeight=window.innerHeight;
-	
+
 	consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
 		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
-	
+
 	maxYToTrigger=screenHeight-consoleYToTrigger-1;
 	maxXToTrigger=screenWidth-consoleXToTrigger-1;
 	clearInterval(resizerator);
-	
+
 	//Change Big heigth and width based on window size:
 		if (screenWidth<1000) consoleBigWidth=275;
 		else;
-	
+
 		if ((boxIsScaled||scaling)&&(locationX<=maxXToTrigger||locationY<=maxYToTrigger)){
 			abortingResize=true;
 			resizerator=setInterval(shrink, 1);
@@ -221,7 +229,7 @@ function scaleBox(event){
 			resizerator=setInterval(grow, 1);
 			abortingResize=false;
 		}
-	
+
 	function grow(){
 			width=parseInt(consoleBox.style.width);
 			height=parseInt(consoleBox.style.height);
