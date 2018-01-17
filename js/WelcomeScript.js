@@ -7,6 +7,8 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		var welcomeText="<p>Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved. Toutes gauches r\u00e9serv\u00e9s.</p><p>marianopolis login:       hackerman<br>password:                                    </p><br style=line-height:2px><p id=\"bonjour\"style=\"font-size:40px;text-align:center\">Bonjour, Hi!</p><p id=\"welcome\"style=\"font-size:40px;text-align:center\">Welcome to/Bienvenu \u00e0</p><p id=\"marianonymousHeader\"style=\"font-size:56px;text-align:center\">MARIANONYMOUS</p><p style=line-height:20px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span> ls <br>Choose your language / SVP choisissez votre langue</p><p id=\"links\", style=lineHeight:20px><a id=\"fran\u00e7ais\", onclick=\"printLink(id)\", href=\"javascript:delay(\'home/home_fr.html\')\", onmouseenter=\"correctText(id)\", onmouseleave=\"correctText(id)\">ASSEMBLY</a> &nbsp&nbsp <!---id=\"links\"-->   <a id=\"english\", onclick=\"printLink(id)\", href=\"javascript:delay(\'home/home_en.html\')\", onmouseover=\"correctText(id)\", onmouseleave=\"correctText(id)\">HASKELL</a></p><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 		function fillSection(text){
+			getCookie();
+			if (lang!=null) window.location=`${lang}/home.html`;
 			var repeatFunction=setInterval(addNextLetter, 10);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
@@ -102,6 +104,8 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			currentDir=newDir;
 			var newText;
 			fillSection(`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`);
+			if (linkID.search("fr")!=-1) document.cookie="lang=fr;path=/";
+			else if (linkID.search("en")!=-1) document.cookie="lang=en;path=/";
 		}
 
 		function correctText(id){
@@ -115,10 +119,28 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 
 
 		function delay(url){
-			setTimeout(function(){window.location=url}, 4000);
+			setTimeout(function(){window.location=url}, 2000);
 			clearInterval(flashCursor);
 		}
 
+var lang;
+
+function getCookie(){
+	var consoleCookie=document.cookie;
+	if (consoleCookie==null||consoleCookie==undefined) lang=null;
+	else{
+		var beforeStartingIndex=document.cookie.search("lang=");
+		var startingIndex=document.cookie.indexOf("=",beforeStartingIndex);
+		//var endingIndex=document.cookie.indexOf(";",startingIndex);
+		cookieContents=document.cookie.slice(startingIndex+1);
+		if (cookieContents.search("en") != -1) lang="en";
+		else if (cookieContents.search("fr") != -1) lang="fr";
+		else lang=null;
+	}
+	
+	console.log(consoleCookie);
+	console.log(document.cookie);
+}
 /*
 if ((window.innerHeignt > window.innerWidth){
 	backgroundSize = window.innerWidth;

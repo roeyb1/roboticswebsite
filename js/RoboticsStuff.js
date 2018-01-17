@@ -57,8 +57,8 @@ function getCookie(){
 	else{
 		var beforeStartingIndex=document.cookie.search("consoleHasAnimated=");
 		var startingIndex=document.cookie.indexOf("=",beforeStartingIndex);
-		var endingIndex=document.cookie.indexOf(";",startingIndex);
-		cookieContents=document.cookie.slice(startingIndex+1, endingIndex);
+		//var endingIndex=document.cookie.indexOf(";",startingIndex);
+		cookieContents=document.cookie.slice(startingIndex+1);
 		if (cookieContents=="true") consoleHasAnimated=true;
 		else consoleHasAnimated=false;
 	}
@@ -77,7 +77,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 var printingComplete;
 
 		function fillSection(text){
-			var repeatFunction=setInterval(addNextLetter, 10);
+			var repeatFunction=setInterval(addNextLetter, 5);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
 			//cursor.style.opacity=1;
