@@ -6,8 +6,8 @@ numbar.style.fontSize=content.style.fontSize;
 
 function numberLines(){
 	var preliminaryNumberOfLines;
-	var heightOfContent=content.clientHeight//offsetHeight;
-	var windowHeight=window.innerHeight
+	var heightOfContent=content.clientHeight;//offsetHeight;
+	var windowHeight=window.innerHeight;
 	console.log(heightOfContent);
 	var lineHeight=25;//parseInt(content.style.lineHeight);
 	console.log(lineHeight);
@@ -30,7 +30,7 @@ function numberLines(){
 	content.style.paddingRight="1cm";
 	content.style.left=widthOfNumbar+5+"px";
 
-	heightOfContent=content.clientHeight//offsetHeight;
+	heightOfContent=content.clientHeight;//offsetHeight;
 	console.log(heightOfContent);
 	lineHeight=25;//parseInt(content.style.lineHeight);
 	console.log(lineHeight);
@@ -47,24 +47,17 @@ function numberLines(){
 	else numbar.style.height=windowHeight+"px";
 
 }
+
 //Cookies
-var animationHasBeenViewed;
+var consoleCookie=document.cookie;
 
 //Navigator
 var repeatFunction;
 var flashCursor;
 var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString;
-		var language=en;
-		var info=`
-		Marianonymous Robotics [kernel 5.778-file:///home/website/.homepage.html4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br>
-		<a id=\"home\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/home.html\')\">home/</a><br>
-		<a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/game.html\')\">game/</a><br>
-		<a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/team.html\')\"> team/</a><br>
-		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/robot.html\')\"> robot/</a><br>
-		<a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/gallery.html\')\">gallery/</a><br>
-		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/journal.html\')\"> journal/</a><br>
-		<span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
+		var language="en";
+		var info=`Marianonymous Robotics [kernel 5.778-file:///home/website/.homepage.html4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br><a id=\"home\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/home.html\')\">home/</a><br><a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/game.html\')\">game/</a><br><a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/team.html\')\"> team/</a><br><a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/robot.html\')\"> robot/</a><br><a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/gallery.html\')\">gallery/</a><br><a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../language/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 var printingComplete;
 
