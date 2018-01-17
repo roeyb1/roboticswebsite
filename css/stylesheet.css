@@ -168,6 +168,16 @@ body {
 	}
 
 /*Team page styles*/
+.teamHeader{
+		font-family: 'Inconsolata',monospace;
+		color: #e5f0ff;
+		text-align:center;
+		font-size:36pt;
+		line-height:20pt;
+		position:relative;
+		top:5pt;
+		clear:both;
+	}
 
 .teamInfoLeft{
 	/*display:inline-block;*/
@@ -298,16 +308,17 @@ img.galleryL {
 
 /*General*/
 
-.header{
-		font-family: 'Inconsolata',monospace;
-		color: #e5f0ff;
-		text-align:center;
-		font-size:36pt;
-		line-height:20pt;
-		position:relative;
-		top:5pt;
-		clear:both;
-	}
+.header {
+	font-family: 'Inconsolata',monospace;
+	color: #e5f0ff;
+	text-align:center;
+	font-size:44pt;
+	line-height:20pt;
+	position:relative;
+	top:10pt;
+	clear:both;
+
+}
 
 .subHeader {
 	font-family: 'Inconsolata',monospace;
