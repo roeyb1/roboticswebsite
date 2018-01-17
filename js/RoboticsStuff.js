@@ -47,6 +47,8 @@ function numberLines(){
 	else numbar.style.height=windowHeight+"px";
 
 }
+//Cookies
+var animationHasBeenViewed;
 
 //Navigator
 var repeatFunction;

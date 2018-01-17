@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+</head>
+<body onload="galleryResize();numberLines()", onresize="galleryResize();numberLines()">
+	<div id="numbar"></div>
+	<div id="content">
+    <p class="teamHeader">Gallery</p>
+
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery1"  src="images/gallery1.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery2" src="images/gallery2.jpg" class="galleryL"  onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery3" src="images/gallery3.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery4" src="images/gallery4.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery5" src="images/gallery5.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery6" src="images/gallery6.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery8" src="images/gallery8.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery9" src="images/gallery9.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery10" src="images/gallery10.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery11" src="images/gallery11.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery12" src="images/gallery12.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery13" src="images/gallery13.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  		<div class="footer", style="padding-top:50px">
+      Our den is located at 4873 Westmount Avenue, in Westmount. Our hacker group consists of over 2000 students in more than 150 clubs.
+       <br> Marianopolis is a private, English CEGEP.
+       <br><a id = "footerLink" class = "footer" href = "home_fr.html"> Fran&ccedil;ais </a>
+		</div>
+	<div id="imageViewer" onclick="dismissImageViewer()">
+  		<img id="featuredImage" src="" width=500 height=500>
+	</div>
+	<div id="console", onmouseenter="scaleBox(event)", onmouseleave="scaleBox(event)">
+		<div id="consoleArea"></div>
+		<div id="cursor">|</div>
+	</div>
+	<script src="../js/RoboticsStuff.js"></script>
+	<script src="../js/galleryScript.js"></script>
+</body>
+</html>
