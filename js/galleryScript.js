@@ -5,11 +5,14 @@ var imageViewer=document.getElementById("imageViewer");
 function expandImage(id){
 	var selectedImage=document.getElementById(id);
 	
+	var widthOfImage=selectedImage.width;
+	var heightOfImage=selectedImage.height;
+	
 	featuredImage.src="images/"+id+".jpg";
 	imageViewer.style.visibility="visible";
 	
-	featuredImage.width=selectedImage.width*1.5;
-	featuredImage.height=selectedImage.height*1.5;
+	featuredImage.width=widthOfImage*1.2;
+	featuredImage.height=heightOfImage*1.2;
 	
 /*	imageViewer.style.width=featuredImage.width+"px";
 	imageViewer.style.height=featuredImage.height+"px";*/
