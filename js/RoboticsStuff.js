@@ -49,8 +49,23 @@ function numberLines(){
 }
 
 //Cookies
-var consoleCookie=document.cookie;
+var consoleHasAnimated;
 
+function getCookie(){
+	var consoleCookie=document.cookie;
+	if (consoleCookie==null||consoleCookie==undefined) consoleHasAnimated=false;
+	else{
+		var beforeStartingIndex=document.cookie.search("consoleHasAnimated=");
+		var startingIndex=document.cookie.indexOf("=",beforeStartingIndex);
+		var endingIndex=document.cookie.indexOf(";",startingIndex);
+		cookieContents=document.cookie.slice(startingIndex+1, endingIndex);
+		if (cookieContents=="true") consoleHasAnimated=true;
+		else consoleHasAnimated=false;
+	}
+	
+	console.log(consoleCookie);
+	console.log(document.cookie);
+}
 //Navigator
 var repeatFunction;
 var flashCursor;
@@ -62,7 +77,6 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 var printingComplete;
 
 		function fillSection(text){
-
 			var repeatFunction=setInterval(addNextLetter, 10);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
@@ -196,6 +210,7 @@ var scalingUp=false;
 var abortingResize=false;
 
 function scaleBox(event){
+	getCookie();
 	var locationX=event.clientX;
 	var locationY=event.clientY;
 	console.log(locationX,locationY);
@@ -252,7 +267,11 @@ function scaleBox(event){
 				clearInterval(resizerator);
 				document.getElementById("consoleArea").innerHTML="";
 				consoleBox.style.overflowY="auto";
-				fillSection(info);
+				if (consoleHasAnimated) document.getElementById("consoleArea").innerHTML=info;
+				else{
+					document.cookie="consoleHasAnimated=true;path=/";
+					fillSection(info);
+				}
 				scaling=false;
 			}
 		}
