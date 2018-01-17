@@ -7,12 +7,17 @@ function expandImage(id){
 
 	var widthOfImage=selectedImage.width;
 	var heightOfImage=selectedImage.height;
+	var windowHeight=window.innerHeight;
+	var marginTop;
 
 	featuredImage.src="../media/gallery/"+id+".jpg";
 	imageViewer.style.visibility="visible";
 
-	featuredImage.width=widthOfImage*1.2;
-	featuredImage.height=heightOfImage*1.2;
+	marginTop = (windowHeight-heightOfImage)/3;
+
+	featuredImage.style.width=widthOfImage*1.2+"px";
+	featuredImage.style.height=heightOfImage*1.2+"px";
+	featuredImage.style.marginTop = marginTop+"px";
 
 /*	imageViewer.style.width=featuredImage.width+"px";
 	imageViewer.style.height=featuredImage.height+"px";*/
@@ -23,8 +28,7 @@ function dismissImageViewer(){
 	featuredImage.src="";
 }
 
-var galleryContainers;
-
+/*var galleryContainers;
 function galleryResize(){
 	var windowWidth=window.innerWidth;
 	galleryContainers=document.getElementsByClassName("galleryImageContainer");
@@ -48,3 +52,4 @@ function galleryResize(){
 		}
 	}
 }
+*/

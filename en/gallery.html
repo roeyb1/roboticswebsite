@@ -7,11 +7,13 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="shortcut icon" href="../media/favicon.png">
 </head>
-<body onload="galleryResize();numberLines()", onresize="galleryResize();numberLines()">
+<body onload="imgResize();numberLines()", onresize="imgResize();numberLines()">
 	<div id="numbar"></div>
 	<div id="content">
     <p class="teamHeader">Gallery</p>
-
+<div align="center">
+  <iframe width="854" height="480" src="https://www.youtube.com/embed/w-I6XTVZXww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
   <div class="galleryImageContainer">
     <div class="galleryImageLeft">
       <img id="gallery1"  src="../media/gallery/gallery1.jpg" class="galleryP" onclick="expandImage(id)">
@@ -74,5 +76,29 @@
 	</div>
 	<script src="../js/RoboticsStuff.js"></script>
 	<script src="../js/galleryScript.js"></script>
+  <script>
+    var width;
+    var imgSize;
+    var arrImg;
+    var arrImgLeft;
+    var arrContainer=document.getElementsByClassName("galleryImageContainer");
+    function imgResize(){
+      width=window.innerWidth;
+      imgSize=width/5;
+      arrImg = document.getElementsByClassName("galleryImage");
+      arrImgLeft = document.getElementsByClassName("galleryImageLeft");
+      for(i=0;i<arrImg.length;i++){
+        arrImg[i].style.width=imgSize+"px";
+        arrImg[i].style.height=imgSize+"px";
+      }
+      for(i=0;i<arrImgLeft.length;i++){
+        arrImgLeft[i].style.width=imgSize+"px";
+        arrImgLeft[i].style.height=imgSize+"px";
+      }
+      for(i=0;i<arrContainer.length;i++){
+        arrContainer[i].style.height = imgSize+"px";
+      }
+    }
+    </script>
 </body>
 </html>

@@ -250,23 +250,21 @@ body {
 }
 
 #featuredImage{
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:10px;
-	margin-bottom:auto;
+	margin:auto;
 	display:block;
 	border:1px solid #ffffff;
+
 }
 
-.galleryImageContainer {
+div.galleryImageContainer {
 	height:400px;
-	width:1500px;
+	width:100%;
 	margin:auto;
 }
 
 div.galleryImageLeft {
 	margin-top:5%;
-	margin-left:100px;
+	margin-left:14%;
 	float:left;
 	overflow:hidden;
 
@@ -277,7 +275,7 @@ div.galleryImageLeft {
 
 div.galleryImage {
 	margin-top:5%;
-	margin-left: 60px;
+	margin-left: 5%;
 	float:left;
 	overflow:hidden;
 
