@@ -1,8 +1,0 @@
-Marianonymous Robotics [Version 10.0.15063]
-(c) 2017 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag -->
-<br style=line-height:1px>
-<span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span><!-- laglaglaglaglaglaglaglaglaglaglag --> ls 
-<a href="game/game.html"> game/</a>
-<a href="team/team.html"> team/</a>
-<a href="robot/robot.html"> robot/</a>
-<span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span>
