@@ -34,7 +34,12 @@ body{
 }
 
 #skipText{
-
+	position:fixed;
+	font-size: 16pt;
+	color: red;
+	top:5px;
+	right:5px;
+	text-decoration:underline;
 }
 
 //The following styles are taken from <OPEN SOURCE WEBSITE HERE>
