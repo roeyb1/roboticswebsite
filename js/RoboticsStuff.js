@@ -262,22 +262,7 @@ var resizerator;
 var scalingUp=false;
 var abortingResize=false;
 
-function getMaxToTrigger(){
-	width=parseInt(consoleBox.style.width);
-	height=parseInt(consoleBox.style.height);
 
-	screenWidth=window.innerWidth;
-	screenHeight=window.innerHeight;
-
-	consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
-	consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
-	
-	outsideY=parseInt(window.innerHeight)-(parseInt(window.innerHeight)*0.04)-1;
-	outsideX=parseInt(window.innerWidth)-parseInt(window.innerWidth)*0.04-1;
-
-	maxYToTrigger=screenHeight-consoleYToTrigger-1;
-	maxXToTrigger=screenWidth-consoleXToTrigger-1;
-}
 
 function scaleBox(event){
 	console.log("resizing");
@@ -289,6 +274,23 @@ function scaleBox(event){
 	var locationY=event.clientY;
 	console.log(locationX,locationY);
 	
+	function getMaxToTrigger(){
+		width=parseInt(consoleBox.style.width);
+		height=parseInt(consoleBox.style.height);
+
+		screenWidth=window.innerWidth;
+		screenHeight=window.innerHeight;
+
+		consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
+		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
+	
+		outsideY=parseInt(window.innerHeight)-(parseInt(window.innerHeight)*0.04)-5;
+		outsideX=parseInt(window.innerWidth)-parseInt(window.innerWidth)*0.04-5;
+
+		maxYToTrigger=screenHeight-consoleYToTrigger-1;
+		maxXToTrigger=screenWidth-consoleXToTrigger-1;
+	}
+	
 	getMaxToTrigger()
 	
 	clearInterval(resizerator);
@@ -297,8 +299,8 @@ function scaleBox(event){
 		if (screenWidth<1000) consoleBigWidth=275;
 		else;
 		
-		if (!changingDirs && (locationX<maxXToTrigger || locationX>outsideX||locationY<maxYToTrigger||locationY>outsideY)){
-			if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger || locationX>outsideX||locationY<maxYToTrigger||locationY>outsideY)){
+		if (!changingDirs && (locationX<maxXToTrigger || locationX>=outsideX ||locationY<maxYToTrigger||locationY>=outsideY)){
+			if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger || locationX>=outsideX||locationY<maxYToTrigger||locationY>=outsideY)){
 				abortingResize=true;
 				resizerator=setInterval(shrink, 1);
 				}
