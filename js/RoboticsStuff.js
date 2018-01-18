@@ -82,17 +82,20 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../${language}/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 var printingComplete;
+var sectionToFill;
+var repeatFunction;
 
 		function fillSection(text){
-			var repeatFunction=setInterval(addNextLetter, 5);
-			var sectionToFill=document.getElementById("consoleArea");
+			clearInterval(repeatFunction);
+			repeatFunction=setInterval(addNextLetter, 5);
+			sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
 			//cursor.style.opacity=1;
 			var fullText=sectionToFill.innerHTML+text;
 
 			var completedLetters=0;
 			printingComplete=false;
-			var flashCursor;
+			clearInterval(flashCursor);
 
 			function cursorFlash(){
 				var cursorOpacity;
@@ -113,21 +116,22 @@ var printingComplete;
 
 			function addNextLetter(){
 				clearInterval(flashCursor);
-				//var tagBeginning;
-				//var tagEnd;
+
 				if (completedLetters>=text.length || printingComplete){
 					sectionToFill.innerHTML=fullText;
+					printingComplete=true;
 					clearInterval(repeatFunction);
 					//flashCursor=setInterval(cursorFlash,5);
-					printingComplete=true;
+
 				}else{
-					if (text[completedLetters] != "<"){
+					console.log(text.charAt(completedLetters));
+					if (text.charAt(completedLetters) != "<"){
 					cursor.style.opacity=0;
-					sectionToFill.innerHTML+=text[completedLetters];
+					sectionToFill.innerHTML+=text.charAt(completedLetters);
 					completedLetters++;
 					//cursor.style.opacity=1;
 					}
-					else if (text[completedLetters] == "<"){
+					else if (text.charAt(completedLetters) == "<"){
 						//Add the html tags separately
 						var substringOfTextLeft=text.substring(completedLetters);
 						var indexOfClosing=substringOfTextLeft.indexOf(">");
@@ -171,19 +175,23 @@ var printingComplete;
 		}
 
 		function printLink(linkID){
+			consoleBox.onmouseleave="";
 			var textToPrint=document.getElementById(linkID).innerText;
 			var newDir=homeString.replace("~",`~/${linkID}`);
 			newDir=newDir.replace("\"aSecond\"","\"aThird\"");
 			newDir=newDir.replace("\"bSecond\"","\"bThird\"");
 			newDir=newDir.replace("\"cSecond\"","\"cThird\"");
 			currentDir=newDir;
+			printingComplete=false;
 			fillSection(`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`);
+			//.getElementById("consoleArea").innerHTML+=`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`;
 		}
 
 
 		function delay(url){
-			setTimeout(function(){window.location=url}, 1000);
-			clearInterval(flashCursor);
+			keepBoxSize();
+			setTimeout(function(){window.location=url}, 10000);
+			//clearInterval(flashCursor);
 		}
 //Expand navigator:
 var consoleBox=document.getElementById("console");
@@ -217,7 +225,9 @@ var scalingUp=false;
 var abortingResize=false;
 
 function scaleBox(event){
+	console.log("resizing");
 	getCookie();
+
 	var locationX=event.clientX;
 	var locationY=event.clientY;
 	console.log(locationX,locationY);
@@ -239,7 +249,7 @@ function scaleBox(event){
 		if (screenWidth<1000) consoleBigWidth=275;
 		else;
 
-		if ((boxIsScaled||scaling)&&(locationX<=maxXToTrigger||locationY<=maxYToTrigger)){
+		if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger||locationY<maxYToTrigger)){
 			abortingResize=true;
 			resizerator=setInterval(shrink, 1);
 			}
@@ -327,4 +337,10 @@ function scaleBox(event){
 		}
  //		while (scaling) document.getElementById("consoleArea").innerHTML="";
 //		while (!boxIsScaled) document.getElementById("consoleArea").innerHTML="Navigate";
+}
+
+function keepBoxSize(){
+	clearInterval(resizerator);
+	consoleBox.style.width=width;
+	consoleBox.style.height=height;
 }
