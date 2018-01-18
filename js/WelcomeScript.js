@@ -38,11 +38,12 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 				clearInterval(flashCursor);
 				//var tagBeginning;
 				//var tagEnd;
-				if (completedLetters>=text.length){
+				if (completedLetters>=text.length || skipped){
 					sectionToFill.innerHTML=fullText;
 					clearInterval(repeatFunction);
 					//flashCursor=setInterval(cursorFlash,5);
 					printingComplete=true;
+					skipped=false;
 				}else{
 					if (text[completedLetters] != "<"){
 					cursor.style.opacity=0;
@@ -158,10 +159,13 @@ function resize(){
 	console.log(newLeft);
 }
 
-var consoleArea=document.getElementById();
+var consoleArea=document.getElementById("consoleArea");
+var skipped=false;
+
 function skipAnimation(){
+	skipped=true;
 	clearInterval(repeatFunction);
-	console
+	consoleArea.innerHTML=welcomeText;
 }
 /*
 if ((window.innerHeignt > window.innerWidth){
