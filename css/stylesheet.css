@@ -259,6 +259,16 @@ body {
 	text-decoration: underline;
 }
 
+.entry {
+	width:50%;
+	text-align:justify;
+	margin:auto;
+	margin-top:3%;
+}
+
+.journalDate{
+	font-size: 20pt;
+}
 /* Gallery */
 
 #imageViewer{

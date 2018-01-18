@@ -11,7 +11,7 @@
 </head>
 <body onload="numberLines()" onresize="location.reload();">
 	<div id="numbar"></div>
-  <div id="content">
+  <div id="content" style="height:100vh; min-height=100%">
     <p class="header">Journal</p>
     <p class="subHeader"><i> &lt!-- Our Privacy at Your Finger Tips --&gt</i> </p>
 
@@ -25,7 +25,7 @@
             <div style="height:18px"></div>
             <button type="button" class="button" style="padding-left:10px"onclick="prevDay()" style=""><strong>Prev Day</strong></button>
           </div>
-          <div id="days" style="text-align:right; margin-left:auto; font-size:28pt; padding-top:7%; color:red; padding-Right:3px"> <bold>14</bold> </div>
+          <div id="journalDaysLeft" style="text-align:right; margin-left:auto; font-size:28pt; padding-top:7%; color:red; padding-Right:3px"> <bold>--</bold> </div>
         </div>
       </div>
       <div style="margin-left:150px;  text-align:right">
@@ -34,11 +34,17 @@
       </div>
     </div>
 
-    <!--- filler div -->
-    <div style="height:1000px;"> </div>
+    <div class="entry" style="height=100%; padding-bottom:20px" >
+      <div id="journalDate" class="journalDate">Month, Day</div>
+      <div id="journalText">
+        <p>As part of our application for Anonymous, we kept a detailed journal of our work for each day.</p>
+      </div>
+    </div>
+
+    <div id="fill"></div>
 
 
-    <div class="footer">
+    <div id="journalFoot" class="footer" style="position:relative; bottom:0; top:50px; padding-top:=100px">
       Our den is located at 4873 Westmount Avenue, in Westmount. Our hacker group consists of over 2000 students in more than 150 clubs.
        <br> Marianopolis is a private, English CEGEP.
        <br><a id = "footerLink" class = "footer" href = "../fr/home.html"> Fran&ccedil;ais </a>
@@ -47,5 +53,83 @@
 
   <script src="../js/RoboticsStuff.js"></script>
   <script src="../js/resize.js"></script>
+  <script>
+    var journal = [
+      {daysLeft: "107",
+       date: "<p>October 17<sup>th</sup></p>",
+       entry: "<p>The newly recruited members of Marianonymous met to learn their task assigned to them by Anonymous. Moreover, the team discussed the preliminary rulebook and suggested various themes. Ultimately, these themes were narrowed down to three possibilities.</p>"
+      },
+      {daysLeft: "100",
+       date: "<p>October 24<sup>th</sup></p>",
+       entry: "<p>The theme for the team was finalized and thus Marianonymous was born. They also discussed the various sub teams necessary for CRC, which includes the video, website, kiosk and robot building. Furthermore, each team separated and brainstormed basic design plans.</p>"
+      },
+      {daysLeft: "86",
+       date: "<p>November 7<sup>th</sup></p>",
+       entry: "<p>This was the first meeting amongst the hackers following the kick off at Laval Senior Academy. At this meeting, all of the members of the team had the rules of the game explained to them. Following the explanation, each sub team dispersed and furthered their brainstorming. At the meeting, the video team decided on a comedic approach. The kiosk team had the task of deciding the type of hacker den they wanted to build and ultimately designed a preliminary sketch. Lastly, the robot team focused on a finding a method to climb the ramp and shoot the game pieces.</p>"
+      },
+      {daysLeft: "77",
+       date: "<p>November 16<sup>th</sup></p>",
+       entry: "<p>At the second meeting, the design for the kiosk was finalized. The concept behind the kiosk was to create a hacker&rsquo;s den that, along with the FBI board, would keep a close eye on the competition. At the same time, the robot team explored their workspace and took inventory of all the remaining pieces from previous years as well as determined potential material needing to be purchased for this year.</p>"
+      },
+      {daysLeft: "72",
+       date: "<p>November 21<sup>st</sup></p>",
+       entry: "<p>At this final conceptual meeting, the group of hackers narrowed down the video idea to two possible options. The decision was then finalized and consists of two hackers being recruited by the infamous group known as Anonymous.</p>"
+      },
+      {daysLeft: "45",
+       date: "<p>December 18<sup>th</sup></p>",
+       entry: "<p>This was the first day of work during the hackers&rsquo; holiday break. The team had to clear out the work space in order to build the robot known as D.E.N.N.I.S. by moving the components of the kiosk into a gym at Marianopolis. The robot team proceeded to take apart the previous years&rsquo; robots to be able to use various parts. They also began designing and building the frame, which later would hold the launcher and grabber. Simultaneously, the programmers were able to make the previous years&rsquo; robots drive forward, backwards and diagonal. Lastly, a template was created for the website.</p>"
+      },
+      {daysLeft: "44",
+       date: "<p>December 19<sup>th</sup></p>",
+       entry: "<p>The design for the kiosk was altered for a final time and work began by using the walls and ceiling from last year. The team diligently sanded and repainted the walls. In order to achieve the aesthetics of a hacker&rsquo;s den, the team chose to paint the walls a dark blue and to spray paint the acrylic panels used for the light boxes black. The objective was to achieve a grungy aura. Meanwhile, the robot team continued to disassemble the old robot and brainstormed launcher mechanism. Other members were able to complete D.E.N.N.I.S&rsquo; frame and make motor mounts for the drills powering the wheels of the drive system. Our programmers successfully created a code that enabled their practice robots to rotate on the spot and while in motion. One of the lead hackers also began the search to purchase matching attire for Marianonymous.</p>"
+      },
+      {daysLeft: "24",
+       date: "<p>January 8<sup>th</sup></p>",
+       entry: "<p>Following the holiday break, the team of hackers returned to Marianopolis to continue their task assigned by Anonymous. The website team scrapped their original design and created a new template. Many of the hackers worked diligently on the kiosk by finishing the FBI board, mounting the shelves, adding a second coat of blue paint and finalizing the design for both the server tower and the desk. They were also tasked with the ongoing job of spray-painting the acrylic panels for the light boxes as part of the ceiling. Meanwhile, the construction of the base of the robot continued as well as the building of a ramp in order to ensure that D.E.N.N.I.S. is able to climb the 30o angle at the competition. Lastly, the video team set up the necessary lighting for filming while the hackers rehearsed their lines for the 5 minute movie.</p>"
+      },
+      {daysLeft: "23",
+       date: "<p>January 9<sup>th</sup></p>",
+       entry: "<p>Working diligently, the website underwent immense construction as the hackers created a new template, console and navigation terminal. Simultaneously, various members of the team painted the ceiling panels and light boxes of the kiosk. Many advancements on the frame of the robot were also made including the building of the top portion and vertical component of the pickup mechanism. Lastly, the majority of the video was filmed but due to recording errors there was no sound for any of the footage and thus the team realized that they would have to redo all of the work the following day.</p>"
+      },
+      {daysLeft: "22",
+       date: "<p>January 10<sup>th</sup></p>",
+       entry: "<p>During another hard day of work, the website team managed to successfully format the console and ensure that the line numbers worked. This day was critical for the interior design of the kiosk. The hackers continued their work on the FBI board, selected poster to hang on the walls of the kiosk, designed their own poster containing the Marianonymous logo, measured and cut pieces of wood to build the hackers&rsquo; desk as well as bought and built a shelving unit. Undeterred from the previous day, the video team re-filmed all of the scenes consisting of the two young hackers in their basement as well as the message from Anonymous containing the team&rsquo;s task. Moreover, the makeshift ramp was painted to obtain the amount of friction on the ramp of the game board. Meanwhile, the hackers also built and tested both the shooting mechanism and a path for the game pieces leading to the shooting mechanism. The launcher consists of two high-speed spinning wheels that the football passes through while the path is a foot long strip of multiple smaller wheels that the game pieces roll along. Lastly, the programmers wrote a script that powered the drills for the launcher.</p>"
+     },
+      {daysLeft: "21",
+       date: "<p>January 11<sup>th</sup></p>",
+       entry: "<p>The hackers assiduously worked to be able to change the colors of links on the website and create a welcome page. They also made a Google form for team members to fill out about themselves, which is also featured on the website. The textual portion of the website was also completed pertaining to the game, school and robot design. Furthermore, the light boxes and panels for the ceiling of the kiosk were mounted along with papers simulating the sizes of the various monitors on the back wall. The hackers also began their work building their own server tower and obtained beanbags for the hacker den. Finally, the design for the banner containing our name and logo was created. Simultaneously, those working on the robot construction remounted the shooting mechanism, completed a large portion of the wiring and were able to mount the drive motors. Unfortunately, one of the hackers broke a vex arm and thus was forced to build a new one. On a more positive note, the team completed filming the footage of the distressed teacher for the video. One of the lead hackers also ordered t-shirts and hoodies for Marianonymous that had their logo placed on the back.</p>"
+      },
+      {daysLeft: "20",
+       date: "<p>January 12<sup>th</sup></p>",
+       entry: "<p>On the last day of the first full week of work, the website had many additions including the starting of the team page, the home page completed, updating the style and getting the console, navigation and the changing colors of the link to work properly. To add a personal touch to the website, headshots and gifs of each hacker and mentor were also taken for the website. The text previously written for the website was translated into French by the hackers as well as commencement of writing this journal. The kiosk team continued to build a server tower and varnish the table for the hacker den. D.E.N.N.I.S. was successfully able to drive around including up the ramp. Moreover, the electrical system was tested along with the redesigning and rebuilding of the feeding mechanism. The programmers were able to compile movement and shooting into one program. During their day of work, and at no fault of their own, the hackers experienced a total power outage for half an hour. Fortunately, this did not deter their work done in the dark.</p>"
+      }
+    ];
+    var ind = -1;
+    var height=window.innerHeight;
+    function nextDay(){
+      ind +=1;
+      if (ind>(journal.length-1)) ind = (journal.length-1);
+      document.getElementById('journalDaysLeft').innerHTML = journal[ind].daysLeft;
+      document.getElementById('journalDate').innerHTML = journal[ind].date;
+      document.getElementById('journalText').innerHTML = journal[ind].entry;
+      if (ind<2) {
+        document.getElementById('journalDaysLeft').style.fontSize = 22+"pt";
+      } else {
+        document.getElementById('journalDaysLeft').style.fontSize = 28+"pt"
+      }
+    }
+    function prevDay(){
+      ind -=1;
+      if (ind<(0)) ind = (0);
+      document.getElementById('journalDaysLeft').innerHTML = journal[ind].daysLeft;
+      document.getElementById('journalDate').innerHTML = journal[ind].date;
+      document.getElementById('journalText').innerHTML = journal[ind].entry;
+      if (ind<2) {
+        document.getElementById('journalDaysLeft').style.fontSize = 22+"pt";
+      } else {
+        document.getElementById('journalDaysLeft').style.fontSize = 28+"pt"
+      }
+    }
+  </script>
 </body>
 </html>
