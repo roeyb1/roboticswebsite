@@ -23,19 +23,19 @@
         <div>
           <div style="float:left">
             <div style="height:18px"></div>
-            <button type="button" class="button" style="padding-left:10px"onclick="prevDay()" style=""><strong>Prev Day</strong></button>
+            <button type="button" class="button" style="padding-left:10px"onclick="prevDay(); numberLines()" style=""><strong>Prev Day</strong></button>
           </div>
           <div id="journalDaysLeft" style="text-align:right; margin-left:auto; font-size:28pt; padding-top:7%; color:red; padding-Right:3px"> <bold>--</bold> </div>
         </div>
       </div>
       <div style="margin-left:150px;  text-align:right">
-        <button type="button" class="button" style="padding-top:7px; padding-Right:18px" onclick="nextDay()" style=""><strong>Next Day</strong></button>
+        <button type="button" class="button" style="padding-top:7px; padding-Right:18px" onclick="nextDay(); numberLines()" style=""><strong>Next Day</strong></button>
         <div style="text-align:left; width:100px; padding-top:14px; padding-left:5px; font-size:26pt">Days</div>
       </div>
     </div>
 
     <div class="entry" style="height=100%; padding-bottom:20px" >
-      <div id="journalDate" class="journalDate">Month, Day</div>
+      <div id="journalDate" class="journalDate">Month, Day<sup>&nbsp;</sup></div>
       <div id="journalText">
         <p>As part of our application for Anonymous, we kept a detailed journal of our work for each day.</p>
       </div>
