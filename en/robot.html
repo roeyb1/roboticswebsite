@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="shortcut icon" href="../media/favicon.png">
 </head>
-<body onload="numberLines()" onresize="imgResize()">
+<body onload="imgResize();numberLines()" onresize="location.reload();imgResize()">
 	<div id="numbar"></div>
 	<div id="content">
 
     <p class="header">Robot</p>
     <p class="subHeader"><i> &lt!-- D.E.N.N.I.S. --&gt</i> </p>
     <div class="gameDescription" >
-  		<div class="sketchfab-embed-wrapper" align="center"><iframe width="800" height="600" src="https://sketchfab.com/models/cef3679819004a9c84cf7942ae04dbb0/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+  		<div class="sketchfab-embed-wrapper" align="left"><iframe id="robotModel" width="100%" src="https://sketchfab.com/models/cef3679819004a9c84cf7942ae04dbb0/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
         <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
           <a href="https://sketchfab.com/models/cef3679819004a9c84cf7942ae04dbb0?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">D.E.N.N.I.S.</a>
         </p>
@@ -23,7 +23,7 @@
 
       <p>Our aspiring hackers have been working tirelessly for weeks to complete the seemingly difficult task assigned to them by anonymous. Named D.E.N.N.I.S., our hackers designed a robot that can pick up footballs and launch them at various targets.</p>
       <div style="display:inline-block;">
-        <img src="../media/robot/wheel.png" height="360px" width="360px" style="float:right;padding-left:10px;">
+        <img id="whel" src="../media/robot/wheel.png" style="height:auto; max-width:100%; float:right; padding-left:10px; margin-top:20px">
         <p>The first step consisted of determining the type and size of wheels used for the drive train. The result of these heated deliberations was to use mechanim wheels. Following this decision, our hackers began building the frame of the robot out of aluminum. </p>
       </div>
 
@@ -55,9 +55,14 @@
     function imgResize()
     {
       width=window.innerWidth;
-      imgSize=width*0.5;
+      imgSize=width*0.47;
       document.getElementById("shooter").style.maxWidth=imgSize+"px";
-      document.getElementById
+      if ((imgSize*0.4)>360) {
+        document.getElementById("whel").style.maxWidth=360+"px";
+      } else {
+        document.getElementById("whel").style.maxWidth=(imgSize*0.4)+"px";
+      }
+      document.getElementById("robotModel").style.height=(imgSize/1.6)+"px";
     }
   </script>
 
