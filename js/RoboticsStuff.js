@@ -101,7 +101,8 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		<a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/team.html\')\"> team/</a><br>
 		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/robot.html\')\"> robot/</a><br>
 		<a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/gallery.html\')\">gallery/</a><br>
-		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
+		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/journal.html\')\"> journal/</a><br>
+		<a id=\"tutorial\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/tutorial.pdf\')\">tutorial/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		var infoFR=`
 		Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. Toutes gauches r\u00e9serv\u00e9es.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br>
 		<a id=\"accueil\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/home.html\')\">accueil/</a><br>
@@ -109,7 +110,9 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		<a id=\"\u00e9quipe\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/team.html\')\">\u00e9quipe/</a><br>
 		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/robot.html\')\">robot/</a><br>
 		<a id=\"gallerie\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/gallery.html\')\">gallerie/</a><br>
-		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
+		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/journal.html\')\"> journal/</a><br>
+		<a id=\"tutorat\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/tutorial.pdf\')\">tutorat/</a><br>
+		<span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 		
 var printingComplete=true;
@@ -249,8 +252,8 @@ var screenHeight;
 
 var consoleYToTrigger;
 var consoleXToTrigger;
-var outsideX;
-var outsideY;
+var outsideY=parseInt(window.innerHeight)-(parseInt(window.innerHeight)*0.04)-15;
+var outsideX=parseInt(window.innerWidth)-parseInt(window.innerWidth)*0.04-15;
 
 
 var maxYToTrigger;
@@ -282,10 +285,6 @@ function scaleBox(event){
 		screenHeight=window.innerHeight;
 
 		consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
-		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
-	
-		outsideY=parseInt(window.innerHeight)-(parseInt(window.innerHeight)*0.04)-5;
-		outsideX=parseInt(window.innerWidth)-parseInt(window.innerWidth)*0.04-5;
 
 		maxYToTrigger=screenHeight-consoleYToTrigger-1;
 		maxXToTrigger=screenWidth-consoleXToTrigger-1;
