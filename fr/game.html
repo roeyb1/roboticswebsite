@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--- --->
+    <title>Jeu</title>
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="shortcut icon" href="../media/favicon.png">
+</head>
+<body onload="adjustVideoSize();numberLines()", onresize="location.reload();adjustVideoSize();numberLines()">
+	<div id="numbar"></div>
+	<div id="content">
+
+    <p class="header">Jeu</p>
+    <p class="subHeader"><i> &lt!-- Converto 2018 --&gt</i> </p>
+
+    <div align="center">
+      <iframe id="gameVideo" width="854" height="480" style="margin-top:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://www.youtube.com/embed/-XThoO--bXM?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="gameDescription" >
+      <p>Notre mission, assign&eacute;e par le groupe Anonymous, consiste de construire un robot qui peut tirer des pi&egrave;ces de jeu modifi&eacute;s, &eacute;galement appel&eacute; des pi&egrave;ces de jeu, sur diff&eacute;rentes cibles. Initialement, le robot peut avoir une largeur et une longueur de trois pieds avec une hauteur de quatre pieds. Une fois que le jeu est en marche, le robot peut s&apos;&eacute;tendre jusqu&apos;&agrave; quatre pieds en largeur et en longueur. La partie commence avec deux &eacute;quipes consistant de deux robots initialement plac&eacute;s aux extr&eacute;mit&eacute;s du terrain de jeu, chacun pr&eacute;-charg&eacute; avec 5 pi&egrave;ces de football. Le &eacute;quipes ont 30 pi&egrave;ces de jeu suppl&eacute;mentaires r&eacute;partis sur les niveaux sup&eacute;rieurs et inf&eacute;rieur du terrain qu&apos;elles peuvent utiliser durant la partie. L&apos;objectif de chaque &eacute;quipe est de gagner le plus de point possible en l&apos;espace de cinq minutes.</p>
+      <p>Les &eacute;quipes peuvent lancer les pi&egrave;ces de jeu &agrave; travers une cible en forme de V correspondant aux couleurs assign&eacute;es &agrave; leurs &eacute;quipes afin d&apos;obtenir 20 points par balle. Ces cibles en V sont situ&eacute;es aux extr&eacute;mit&eacute;s du niveau sup&eacute;rieur du terrain atteint en montant une pente raide de 30 degr&eacute;s. En face de chacune de ses cibles se situe un multiplicateur &agrave; 3 niveaux sur la plate-forme sup&eacute;rieure. Une fois qu&apos;une pi&egrave;ce de jeu atteint le multiplicateur, plus aucune pi&egrave;ce ne peut &ecirc;tre lanc&eacute; dans la cible en V. Si aucune pi&egrave;ce de jeu n&apos;est plac&eacute;e dans le multiplicateur, alors le score n&apos;est pas multipli&eacute;. Si un ballon est plac&eacute; au premier niveau du multiplicateur, le score obtenu par la cible en V est multipli&eacute; par un, si deux pi&egrave;ces de jeu atteignent le deuxi&egrave;me niveau, le score est multipli&eacute; par deux&helip; et ainsi de suite. Les diff&eacute;rents niveaux sont accessibles seulement en ouvrant les verrous trouv&eacute;s sur le c&ocirc;t&eacute; des multiplicateurs. <p>
+	    <p>Au centre du terrain se trouve une cible &agrave; quatre c&oelig;urs qui contient deux compartiments pour chaque &eacute;quipe. Cette cible est constamment en rotation et est utilis&eacute; comme un multiplicateur pour tous les points. Le score multipli&eacute; est calcul&eacute; sur la base d&apos;un ratio du nombre de pi&egrave;ces de jeu plac&eacute;es dans la cible &agrave; quatre c&oelig;urs par chaque &eacute;quipe avec un multiplicateur maximal de deux.</p>
+	    <p>De plus, deux prismes sont situ&eacute;s sur le terrain, chacun de couleur diff&eacute;rente. Chaque prisme contient un cylindre correspondant &agrave; la couleur de l&apos;&eacute;quipe adverse. Chaque &eacute;quipe re&ccedil;oit 10 points pour placer une pi&egrave;ce de jeu dans le prisme de son &eacute;quipe et 30 points pour placer elle dans le cylindre.</p>
+	    <p>Afin d&apos;obtenir des points pendant une manche, un robot doit contribuer au score de son &eacute;quipe en pla&ccedil;ant au moins une pi&egrave;ce de jeu dans la cible en forme de V ou dans l&apos;un des multiplicateurs. Si un robot ne parvient pas &agrave; le faire, il est consid&eacute;r&eacute; comme un robot inactif et ne gagne aucun point. Si un robot est associ&eacute; &agrave; un robot inactif, cette &eacute;quipe est r&eacute;compens&eacute;e d&apos;un multiplicateur de 1,5 pour compenser l&apos;incomp&eacute;tence de son alli&eacute;.</p>
+	    <p>Les rondes pr&eacute;liminaires d&eacute;cident du classement des s&eacute;ries &eacute;liminatoires. Les deux scores les plus bas des rondes pr&eacute;liminaires sont supprim&eacute;s lors du calcul du classement de chaque &eacute;quipe.</p>
+    </div>
+<div class="footer", style="padding-top:50px">
+      Nous sommes situ&eacute;s au 4873 Avenue Westmount &agrave; Westmount, notre groupe de hackers compte plus de 2 000 &eacute;tudiants faisant partie de plus de 150 clubs scolaires.
+      <br>Marianopolis est un c&eacute;gep anglophone priv&eacute;.
+      <br><a id = "footerLink" class = "footer" href = "../en/game.html"> English </a>
+		  </div>
+	</div>
+
+  <div id="console", onmouseenter="scaleBox(event)", onmouseleave="scaleBox(event)">
+		<div id="consoleArea"></div>
+		<div id="cursor">|</div>
+	</div>
+
+  <script src="../js/RoboticsStuff.js"></script>
+
+	<script>
+		function adjustVideoSize(){
+			var windowHeight=window.innerHeight;
+			var windowWidth=window.innerWidth;
+			var video=document.getElementById("gameVideo");
+			
+			var currentVideoWidth=parseInt(video.style.width);
+			var currentVideoHeight=parseInt(video.style.height);
+			
+			var aspectRatio=currentVideoWidth/currentVideoHeight;
+			
+			var newVideoWidth=2*windowWidth/3;
+			var newVideoHeight=newVideoWidth*aspectRatio;
+			
+			video.style.width=newVideoWidth+"px";
+			video.style.height=newVideoHeight+"px";
+		}
+	</script>
+</body>
+</html>

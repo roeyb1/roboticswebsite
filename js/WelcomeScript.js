@@ -4,11 +4,9 @@ var repeatFunction;
 var flashCursor;
 var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString;
-		var welcomeText="<p>Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved. Toutes gauches r\u00e9serv\u00e9s.</p><p>marianopolis login:       hackerman<br>password:                                    </p><br style=line-height:2px><p id=\"bonjour\"style=\"font-size:40px;text-align:center\">Bonjour, Hi!</p><p id=\"welcome\"style=\"font-size:40px;text-align:center\">Welcome to/Bienvenu \u00e0</p><p id=\"marianonymousHeader\"style=\"font-size:56px;text-align:center\">MARIANONYMOUS</p><p style=line-height:20px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span> ls <br>Choose your language / SVP choisissez votre langue</p><p id=\"links\", style=lineHeight:20px><a id=\"fran\u00e7ais\", onclick=\"printLink(id)\", href=\"javascript:delay(\'fr/home.html\')\", onmouseenter=\"correctText(id)\", onmouseleave=\"correctText(id)\">ASSEMBLY</a> &nbsp&nbsp <!---id=\"links\"-->   <a id=\"english\", onclick=\"printLink(id)\", href=\"javascript:delay(\'en/home.html\')\", onmouseover=\"correctText(id)\", onmouseleave=\"correctText(id)\">HASKELL</a></p><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
+		var welcomeText="<p>Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved. Toutes gauches r\u00e9serv\u00e9s.</p><p>marianopolis login:       hackerman<br>password:                                    </p><br style=line-height:2px><p id=\"bonjour\"style=\"font-size:40px;text-align:center\">Bonjour, Hi!</p><p id=\"welcome\"style=\"font-size:40px;text-align:center\">Welcome to/Bienvenu \u00e0</p><p id=\"marianonymousHeader\"style=\"font-size:56px;text-align:center\">MARIANONYMOUS</p><p style=line-height:20px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span> ls <br>Choose your language / SVP choisissez votre langue</p><p id=\"links\", style=lineHeight:20px><a id=\"fran\u00e7ais\", onclick=\"printLink(id)\", href=\"javascript:delay(\'fr/home.html\')\">FRAN\u00c7AIS\</a> &nbsp&nbsp <!---id=\"links\"-->   <a id=\"english\", onclick=\"printLink(id)\", href=\"javascript:delay(\'en/home.html\')\">ENGLISH</a></p><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 		function fillSection(text){
-			getCookie();
-			if (lang!=null) window.location=`${lang}/home.html`;
 			var repeatFunction=setInterval(addNextLetter, 10);
 			var sectionToFill=document.getElementById("consoleArea");
 			var cursor=document.getElementById("cursor");
@@ -40,11 +38,12 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 				clearInterval(flashCursor);
 				//var tagBeginning;
 				//var tagEnd;
-				if (completedLetters>=text.length){
+				if (completedLetters>=text.length || skipped){
 					sectionToFill.innerHTML=fullText;
 					clearInterval(repeatFunction);
 					//flashCursor=setInterval(cursorFlash,5);
 					printingComplete=true;
+					skipped=false;
 				}else{
 					if (text[completedLetters] != "<"){
 					cursor.style.opacity=0;
@@ -102,20 +101,26 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			newDir=newDir.replace("\"bSecond\"","\"bThird\"");
 			newDir=newDir.replace("\"cSecond\"","\"cThird\"");
 			currentDir=newDir;
-			var newText;
-			fillSection(`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`);
-			if (linkID.search("fr")!=-1) document.cookie="lang=fr;path=/";
-			else if (linkID.search("en")!=-1) document.cookie="lang=en;path=/";
+			var directionText;
+			if (linkID.search("fr")!=-1){
+				document.cookie="lang=fr;path=/";
+				directionText=`cd ${linkID}<br>  Changement de fichiers \u00e0 \"${linkID}\"   <br>${currentDir}`
+			}
+			else if (linkID.search("en")!=-1){
+				document.cookie="lang=en;path=/";
+				directionText=`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`
+			}
+			fillSection(directionText);
 		}
 
-		function correctText(id){
+/*		function correctText(id){
 			if (document.getElementById(id).innerHTML==id.toUpperCase()){
 				if (id=="fran\u00e7ais") document.getElementById(id).innerHTML="ASSEMBLY";
 				else if (id=="english") document.getElementById(id).innerHTML="HASKELL";
 
 			}
 			else document.getElementById(id).innerHTML=id.toUpperCase();
-		}
+		}*/
 
 
 		function delay(url){
@@ -123,7 +128,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 			clearInterval(flashCursor);
 		}
 
-var lang;
+/*var lang;
 
 function getCookie(){
 	var consoleCookie=document.cookie;
@@ -140,6 +145,27 @@ function getCookie(){
 	
 	console.log(consoleCookie);
 	console.log(document.cookie);
+}*/
+
+function resize(){
+	var windowWidth=window.innerWidth;
+	
+	var textBox=document.getElementById("textBox");
+	
+	var newLeft=windowWidth*0.15;
+	
+	textBox.style.width=windowWidth/1.5 +"px";
+	textBox.style.left=newLeft+"px";
+	console.log(newLeft);
+}
+
+var consoleArea=document.getElementById("consoleArea");
+var skipped=false;
+
+function skipAnimation(){
+	skipped=true;
+	clearInterval(repeatFunction);
+	consoleArea.innerHTML=welcomeText;
 }
 /*
 if ((window.innerHeignt > window.innerWidth){

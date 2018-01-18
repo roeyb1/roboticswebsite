@@ -224,8 +224,8 @@ var changingDirs=false;
 			printingComplete=false;
 			var stringToFill;
 			if (lang=="en") stringToFill=`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`;
-			else if (lang=="fr") stringToFill=`cd ${linkID}<br>  Changement de fichiers \u00e0 \"${linkID}\"   <br>${currentDir}`
-			fillSection(`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`);
+			else if (lang=="fr") stringToFill=`cd ${linkID}<br>  Changement de fichiers \u00e0 \"${linkID}\"   <br>${currentDir}`;
+			fillSection(stringToFill);
 			//.getElementById("consoleArea").innerHTML+=`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`;
 		}
 

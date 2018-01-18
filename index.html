@@ -7,9 +7,12 @@
 <title>Marianonymous</title>
 <!--<link href="css/stylesheet.css" rel="stylesheet">-->
 </head>
-<body id="console", onload="fillSection(welcomeText)">
-		<span id="consoleArea"></span>
-		<span id="cursor" style="opacity: 1;">|</span>
+<body id="console", onload="resize();fillSection(welcomeText)", onresize="resize()">
+		<div id="textBox">
+			<span id="consoleArea"></span>
+			<span id="cursor" style="opacity: 1;">|</span>
+		</div>
+		<div id="skipText", onclick="skipAnimation()">Skip/sauter</div>
 	<script src="js/WelcomeScript.js"></script>
 
 

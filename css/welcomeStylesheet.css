@@ -9,7 +9,10 @@ body{
 	color:#ffffff;
 	background-image: url("logo-background-new.png");
 	background-repeat: no-repeat;
-	background-size:cover;
+	background-size:contain;
+	background-position: center center;
+	width:95vh;
+	height:95vh;
 	background-color: #181e24;
 	position:relative;
 	overflow-y:scroll;
@@ -17,9 +20,26 @@ body{
 	padding:12px;
 }
 
+#textBox{
+	display:block;
+	position: relative;
+	/*margin:auto;
+	width:100%;*/
+	left:50%;
+}
+
 #links{
 	text-align:center;
 
+}
+
+#skipText{
+	position:fixed;
+	font-size: 16pt;
+	color: red;
+	top:5px;
+	right:5px;
+	text-decoration:underline;
 }
 
 //The following styles are taken from <OPEN SOURCE WEBSITE HERE>
