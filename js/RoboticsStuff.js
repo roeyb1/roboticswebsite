@@ -10,9 +10,9 @@ function numberLines(){
 	var preliminaryNumberOfLines;
 	var heightOfContent=content.clientHeight;//offsetHeight;
 	var windowHeight=window.innerHeight;
-	console.log(heightOfContent);
+	//console.log(heightOfContent);
 	var lineHeight=25;//parseInt(content.style.lineHeight);
-	console.log(lineHeight);
+	//console.log(lineHeight);
 	if (heightOfContent>windowHeight) preliminaryNumberOfLines=heightOfContent/lineHeight;
 	else preliminaryNumberOfLines=windowHeight/lineHeight;
 
@@ -25,7 +25,7 @@ function numberLines(){
 
 	numbar.style.width=widthOfNumbar + "px";
 	var windowWidth=window.innerWidth;
-	console.log(windowWidth);
+	//console.log(windowWidth);
 	var widthOfContent=windowWidth-(widthOfNumbar+5);
 	content.style.width=widthOfContent + "px";
 	var widthOfContentText=widthOfContent-10;
@@ -33,9 +33,9 @@ function numberLines(){
 	content.style.left=widthOfNumbar+5+"px";
 
 	heightOfContent=content.clientHeight;//offsetHeight;
-	console.log(heightOfContent);
+	//console.log(heightOfContent);
 	lineHeight=25;//parseInt(content.style.lineHeight);
-	console.log(lineHeight);
+	//console.log(lineHeight);
 	var numberOfLines;
 	if (heightOfContent>windowHeight) numberOfLines=heightOfContent/lineHeight;
 	else numberOfLines=windowHeight/lineHeight;
@@ -268,14 +268,14 @@ var abortingResize=false;
 
 
 function scaleBox(event){
-	console.log("resizing");
+	//console.log("resizing");
 	//getAnimatedCookie();
 	getLang();
 	getInfo();
 
 	var locationX=event.clientX;
 	var locationY=event.clientY;
-	console.log(locationX,locationY);
+	//console.log(locationX,locationY);
 	
 	function getMaxToTrigger(){
 		width=parseInt(consoleBox.style.width);

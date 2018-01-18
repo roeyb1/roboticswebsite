@@ -156,7 +156,7 @@ function resize(){
 	
 	textBox.style.width=windowWidth/1.5 +"px";
 	textBox.style.left=newLeft+"px";
-	console.log(newLeft);
+	//console.log(newLeft);
 }
 
 var consoleArea=document.getElementById("consoleArea");
