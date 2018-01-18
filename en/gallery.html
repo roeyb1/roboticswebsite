@@ -115,10 +115,10 @@
 			var aspectRatio=currentVideoWidth/currentVideoHeight;
 			
 			var newVideoWidth=2*windowWidth/3;
-			var newVideoHeight=newVideoWidth*aspectRatio;
+			//var newVideoHeight=(newVideoWidth*aspectRatio);
 			
-			video.style.width=newVideoWidth+"px";
-			video.style.height=newVideoHeight+"px";
+			video.width=newVideoWidth.toFixed();
+			//video.height=newVideoHeight.toFixed();
 		}
 	</script>
 </body>

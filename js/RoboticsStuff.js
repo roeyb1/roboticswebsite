@@ -109,7 +109,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		var infoFR=`
 		Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. Toutes gauches r\u00e9serv\u00e9es.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br>
-		<a id=\"accueil\", onclick=\"printLink(id)\", href=\"javascript:delay(\'..fr/home.html\')\">accueil/</a><br>
+		<a id=\"accueil\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/home.html\')\">accueil/</a><br>
 		<a id=\"jeu\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/game.html\')\">jeu/</a><br>
 		<a id=\"\u00e9quipe\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/team.html\')\">\u00e9quipe/</a><br>
 		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/robot.html\')\">robot/</a><br>
@@ -212,6 +212,7 @@ var repeatFunction;
 var changingDirs=false;
 
 		function printLink(linkID){
+			getLangCookie();
 			changingDirs=true;
 			consoleBox.onmouseleave="";
 			var textToPrint=document.getElementById(linkID).innerText;
@@ -221,6 +222,9 @@ var changingDirs=false;
 			newDir=newDir.replace("\"cSecond\"","\"cThird\"");
 			currentDir=newDir;
 			printingComplete=false;
+			var stringToFill;
+			if (lang=="en") stringToFill=`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`;
+			else if (lang=="fr") stringToFill=`cd ${linkID}<br>  Changement de fichiers \u00e0 \"${linkID}\"   <br>${currentDir}`
 			fillSection(`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`);
 			//.getElementById("consoleArea").innerHTML+=`cd ${linkID}<br>  Changing directories to \"${linkID}\"   <br>${currentDir}`;
 		}
