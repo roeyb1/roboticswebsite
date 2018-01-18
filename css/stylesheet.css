@@ -238,11 +238,15 @@ body {
 /*journal*/
 .timer{
 	font-family: 'Orbitron';
+	color: #e5f0ff;
+	position: relative;
+	top:50px;
+	left: 43%;
 }
 .button {
     background-color: transparent; /* Green */
     border: none;
-    color: white;
+    color: #93a1a1;
 		text-align: right;
     text-decoration: none;
     display: inline-block;
