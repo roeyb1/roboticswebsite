@@ -252,8 +252,8 @@ var screenHeight;
 
 var consoleYToTrigger;
 var consoleXToTrigger;
-var outsideX;
-var outsideY;
+var outsideY=parseInt(window.innerHeight)-(parseInt(window.innerHeight)*0.04)-15;
+var outsideX=parseInt(window.innerWidth)-parseInt(window.innerWidth)*0.04-15;
 
 
 var maxYToTrigger;
@@ -285,10 +285,6 @@ function scaleBox(event){
 		screenHeight=window.innerHeight;
 
 		consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
-		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
-	
-		outsideY=parseInt(window.innerHeight)-(parseInt(window.innerHeight)*0.04)-5;
-		outsideX=parseInt(window.innerWidth)-parseInt(window.innerWidth)*0.04-5;
 
 		maxYToTrigger=screenHeight-consoleYToTrigger-1;
 		maxXToTrigger=screenWidth-consoleXToTrigger-1;
