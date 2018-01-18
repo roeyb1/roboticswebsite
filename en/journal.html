@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <link rel="shortcut icon" href="../media/favicon.png">
 </head>
-<body onload="numberLines()">
+<body onload="numberLines()" onresize="location.reload();">
 	<div id="numbar"></div>
   <div id="content">
     <p class="header">Journal</p>
@@ -17,27 +17,27 @@
 
 <!-- The html code to make the countdown timer work -->
 
-    <div class="timer" style="height:75px; width:275px">
+    <div id="timer" class="timer" style="height:75px; width:275px">
       <div style="height:75px; width:150px; float:left; margin-right:0px">
         <div style="text-align:center; height:35%; width:100%; font-size:21pt; padding-top:3%"><i>T - minus</i></div>
         <div>
           <div style="float:left">
             <div style="height:18px"></div>
-            <button type="button" class="button" onclick="prevDay()" style=""><strong>Prev Day</strong></button>
+            <button type="button" class="button" style="padding-left:10px"onclick="prevDay()" style=""><strong>Prev Day</strong></button>
           </div>
           <div id="days" style="text-align:right; margin-left:auto; font-size:28pt; padding-top:7%; color:red; padding-Right:3px"> <bold>14</bold> </div>
         </div>
       </div>
       <div style="margin-left:150px;  text-align:right">
-        <button type="button" class="button" onclick="nextDay()" style=""><strong>Next Day</strong></button>
-        <div style="text-align:left; width:100px; padding-top:16px; padding-left:5px; font-size:26pt">Days</div>
+        <button type="button" class="button" style="padding-top:7px; padding-Right:18px" onclick="nextDay()" style=""><strong>Next Day</strong></button>
+        <div style="text-align:left; width:100px; padding-top:14px; padding-left:5px; font-size:26pt">Days</div>
       </div>
     </div>
 
     <!--- filler div -->
     <div style="height:1000px;"> </div>
 
-    
+
     <div class="footer">
       Our den is located at 4873 Westmount Avenue, in Westmount. Our hacker group consists of over 2000 students in more than 150 clubs.
        <br> Marianopolis is a private, English CEGEP.
@@ -47,6 +47,5 @@
 
   <script src="../js/RoboticsStuff.js"></script>
   <script src="../js/resize.js"></script>
-
 </body>
 </html>

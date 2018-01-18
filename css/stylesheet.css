@@ -240,8 +240,9 @@ body {
 	font-family: 'Orbitron';
 	color: #e5f0ff;
 	position: relative;
-	top:50px;
-	left: 43%;
+	top:20px;
+	text-align: center;
+	margin:0 auto;
 }
 .button {
     background-color: transparent; /* Green */
@@ -252,6 +253,10 @@ body {
     display: inline-block;
     font-size: 16px;
 		font-style: 'Inconsolata', monospace;
+		outline:none;
+}
+.button:hover{
+	text-decoration: underline;
 }
 
 /* Gallery */
