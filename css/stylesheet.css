@@ -383,6 +383,7 @@ img.galleryL {
 	bottom:0px;
 	height: 100%;
 	box-shadow:0px 0px 2px 2px #002b36;
+	user-select:none;
 }
 
 #content{
@@ -412,6 +413,7 @@ div.container {
 
 #console{
 	text-size:10pt;
+	user-select:none;
 	font-family: 'Anonymous Pro', monospace;
 	color:#ffffff;
 	background-color: #002b36;
