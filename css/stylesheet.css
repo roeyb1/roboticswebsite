@@ -212,7 +212,7 @@ body {
 .userNameAndImage{
 	float:inherit;
 	width:205px;
-	height:250px;
+	height:100%;
 	position: relative;
 	padding-left:5px;
 	padding-right:5px;
@@ -227,6 +227,7 @@ body {
 	font-family:'Anonymous Pro', monospace;
 	font-size:18pt;
 	top:5px;
+	margin-bottom: auto;
 }
 .userContent{
 	padding-left:25%;
@@ -234,6 +235,7 @@ body {
 	font-size:16pt;
 	font-family: 'Inconsolata',monospace;
 	padding-bottom:10px;
+	margin-bottom: 10px;
 }
 /*journal*/
 .timer{
