@@ -229,7 +229,7 @@ var changingDirs=false;
 
 		function delay(url){
 			keepBoxSize();
-			setTimeout(function(){window.location=url}, 1000);
+			setTimeout(function(){window.location=url}, 750);
 			clearInterval(flashCursor);
 		}
 //Expand navigator:
