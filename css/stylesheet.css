@@ -249,9 +249,9 @@ body {
 .button {
     background-color: transparent; /* Green */
     border: none;
-    color: #93a1a1;
+    color: #6c71c4;
 		text-align: right;
-    text-decoration: none;
+    text-decoration: underline;
     display: inline-block;
     font-size: 16px;
 		font-style: 'Inconsolata', monospace;
