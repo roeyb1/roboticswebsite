@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallerie</title>
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="shortcut icon" href="../media/favicon.png">
+</head>
+<body onload="adjustVideoSize();imgResize();numberLines()", onresize="adjustVideoSize();imgResize();numberLines()">
+	<div id="numbar"></div>
+	<div id="content">
+    <p class="header">Gallerie</p>
+    <p class="subHeader"><i> &lt!-- En pleine HD --&gt</i> </p>
+<div align="center">
+  <iframe id="galleryVideo" width="854" height="480" style="margin-top:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://www.youtube.com/embed/w-I6XTVZXww?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery1"  src="../media/gallery/gallery1.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery2" src="../media/gallery/gallery2.jpg" class="galleryL"  onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery3" src="../media/gallery/gallery3.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery4" src="../media/gallery/gallery4.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery5" src="../media/gallery/gallery5.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery6" src="../media/gallery/gallery6.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery8" src="../media/gallery/gallery8.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery9" src="../media/gallery/gallery9.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery10" src="../media/gallery/gallery10.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  <div class="galleryImageContainer">
+    <div class="galleryImageLeft">
+      <img id="gallery11" src="../media/gallery/gallery11.jpg" class="galleryP" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery12" src="../media/gallery/gallery12.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+    <div class="galleryImage">
+      <img id="gallery13" src="../media/gallery/gallery13.jpg" class="galleryL" onclick="expandImage(id)">
+    </div>
+  </div>
+
+  		<div class="footer", style="padding-top:50px">
+      Nous sommes situ&eacute;s au 4873 Avenue Westmount &agrave; Westmount, notre groupe de hackers compte plus de 2 000 &eacute;tudiants faisant partie de plus de 150 clubs scolaires.
+      <br>Marianopolis est un c&eacute;gep anglophone priv&eacute;.
+      <br><a id = "footerLink" class = "footer" href = "../en/gallery.html"> English </a>
+		  </div>
+	<div id="imageViewer" onclick="dismissImageViewer()">
+  		<img id="featuredImage" src="" width=500 height=500>
+	</div>
+</div>	
+	<div id="console", onmouseenter="scaleBox(event)", onmouseleave="scaleBox(event)">
+		<div id="consoleArea"></div>
+		<div id="cursor">|</div>
+	</div>
+	<script src="../js/RoboticsStuff.js"></script>
+	<script src="../js/galleryScript.js"></script>
+  <script>
+    var width;
+    var imgSize;
+    var arrImg;
+    var arrImgLeft;
+    var arrContainer=document.getElementsByClassName("galleryImageContainer");
+    function imgResize(){
+      width=window.innerWidth;
+      imgSize=width/5;
+      arrImg = document.getElementsByClassName("galleryImage");
+      arrImgLeft = document.getElementsByClassName("galleryImageLeft");
+      for(i=0;i<arrImg.length;i++){
+        arrImg[i].style.width=imgSize+"px";
+        arrImg[i].style.height=imgSize+"px";
+      }
+      for(i=0;i<arrImgLeft.length;i++){
+        arrImgLeft[i].style.width=imgSize+"px";
+        arrImgLeft[i].style.height=imgSize+"px";
+      }
+      for(i=0;i<arrContainer.length;i++){
+        arrContainer[i].style.height = imgSize+"px";
+      }
+    }
+    </script>
+    
+    <script>
+		function adjustVideoSize(){
+			var windowHeight=window.innerHeight;
+			var windowWidth=window.innerWidth;
+			var video=document.getElementById("galleryVideo");
+			
+			var currentVideoWidth=parseInt(video.style.width);
+			var currentVideoHeight=parseInt(video.style.height);
+			
+			var aspectRatio=currentVideoWidth/currentVideoHeight;
+			
+			var newVideoWidth=2*windowWidth/3;
+			//var newVideoHeight=(newVideoWidth*aspectRatio);
+			
+			video.width=newVideoWidth.toFixed();
+			//video.height=newVideoHeight.toFixed();
+		}
+	</script>
+</body>
+</html>

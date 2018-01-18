@@ -9,7 +9,10 @@ body{
 	color:#ffffff;
 	background-image: url("logo-background-new.png");
 	background-repeat: no-repeat;
-	background-size:cover;
+	background-size:contain;
+	background-position: center center;
+	width:95vh;
+	height:95vh;
 	background-color: #181e24;
 	position:relative;
 	overflow-y:scroll;
@@ -17,8 +20,20 @@ body{
 	padding:12px;
 }
 
+#textBox{
+	display:block;
+	position: relative;
+	/*margin:auto;
+	width:100%;*/
+	left:50%;
+}
+
 #links{
 	text-align:center;
+
+}
+
+#skipText{
 
 }
 
