@@ -1,8 +1,3 @@
-cls
-
-ECHO We are about to update the server wowza
-pause
-
 del /q X:\css
 del /q X:\en
 del /q X:\fr
