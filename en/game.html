@@ -41,23 +41,17 @@
 
   <script src="../js/RoboticsStuff.js"></script>
 
-	<script>
-		function adjustVideoSize(){
-			var windowHeight=window.innerHeight;
-			var windowWidth=window.innerWidth;
-			var video=document.getElementById("gameVideo");
-			
-			var currentVideoWidth=parseInt(video.style.width);
-			var currentVideoHeight=parseInt(video.style.height);
-			
-			var aspectRatio=currentVideoWidth/currentVideoHeight;
-			
-			var newVideoWidth=2*windowWidth/3;
-			var newVideoHeight=newVideoWidth*aspectRatio;
-			
-			video.style.width=newVideoWidth+"px";
-			video.style.height=newVideoHeight+"px";
-		}
-	</script>
+  <script>
+  function adjustVideoSize(){
+    var windowHeight=window.innerHeight;
+    var windowWidth=window.innerWidth;
+    var video=document.getElementById("gameVideo");
+    var aspectRatio=480/854;
+
+    video.style.width=(windowWidth/2)+"px";
+    video.style.height=(windowWidth*0.5*aspectRatio)+"px";
+    //var newVideoHeight=(newVideoWidth*aspectRatio)
+  }
+</script>
 </body>
 </html>
