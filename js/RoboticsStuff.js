@@ -112,7 +112,7 @@ var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</sp
 		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
 		
-var printingComplete;
+var printingComplete=true;
 var sectionToFill;
 var repeatFunction;
 
@@ -155,7 +155,6 @@ var repeatFunction;
 					//flashCursor=setInterval(cursorFlash,5);
 
 				}else{
-					console.log(text.charAt(completedLetters));
 					if (text.charAt(completedLetters) != "<"){
 					cursor.style.opacity=0;
 					sectionToFill.innerHTML+=text.charAt(completedLetters);
@@ -261,16 +260,7 @@ var resizerator;
 var scalingUp=false;
 var abortingResize=false;
 
-function scaleBox(event){
-	console.log("resizing");
-	//getAnimatedCookie();
-	getLang();
-	getInfo();
-
-	var locationX=event.clientX;
-	var locationY=event.clientY;
-	console.log(locationX,locationY);
-
+function getMaxToTrigger(){
 	width=parseInt(consoleBox.style.width);
 	height=parseInt(consoleBox.style.height);
 
@@ -282,13 +272,27 @@ function scaleBox(event){
 
 	maxYToTrigger=screenHeight-consoleYToTrigger-1;
 	maxXToTrigger=screenWidth-consoleXToTrigger-1;
+}
+
+function scaleBox(event){
+	console.log("resizing");
+	//getAnimatedCookie();
+	getLang();
+	getInfo();
+
+	var locationX=event.clientX;
+	var locationY=event.clientY;
+	console.log(locationX,locationY);
+	
+	getMaxToTrigger()
+	
 	clearInterval(resizerator);
 
 	//Change Big heigth and width based on window size:
 		if (screenWidth<1000) consoleBigWidth=275;
 		else;
 		
-		if (!changingDirs){
+		if (!changingDirs && (locationX<maxXToTrigger||locationY<maxYToTrigger)){
 			if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger||locationY<maxYToTrigger)){
 				abortingResize=true;
 				resizerator=setInterval(shrink, 1);
