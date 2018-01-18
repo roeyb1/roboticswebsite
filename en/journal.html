@@ -25,11 +25,11 @@
             <div style="height:18px"></div>
             <button type="button" class="button" style="padding-left:10px"onclick="prevDay(); numberLines()" style=""><strong>Prev Day</strong></button>
           </div>
-          <div id="journalDaysLeft" style="text-align:right; margin-left:auto; font-size:26pt; padding-top:7%; color:red; padding-Right:0px"> <bold>--</bold> </div>
+          <div id="journalDaysLeft" style="text-align:right; position:relative; bottom:0; margin-left:auto; font-size:26pt; padding-top:7%; color:red; padding-Right:0px"> <bold>--</bold> </div>
         </div>
       </div>
       <div style="margin-left:150px;  text-align:right">
-        <button type="button" class="button" style="padding-top:7px; padding-Right:18px" onclick="nextDay(); numberLines()" style=""><strong>Next Day</strong></button>
+        <button type="button" class="button" style="padding-top:7px; padding-Right:18px; padding-left:5px" onclick="nextDay(); numberLines()" style=""><strong>Next Day</strong></button>
         <div style="text-align:left; width:100px; padding-top:14px; padding-left:5px; font-size:26pt">Days</div>
       </div>
     </div>
@@ -51,7 +51,7 @@
 		</div>
   </div>
 <div id="console", onmouseenter="scaleBox(event)", onmouseleave="scaleBox(event)">
-	<div id="consoleArea"></div>
+	<div id="consoleArea">Navigate</div>
 	<div id="cursor">|</div>
 </div>
   <script src="../js/RoboticsStuff.js"></script>
@@ -105,7 +105,23 @@
       {daysLeft: "20",
        date: "<p>January 12<sup>th</sup></p>",
        entry: "<p>On the last day of the first full week of work, the website had many additions including the starting of the team page, the home page completed, updating the style and getting the console, navigation and the changing colors of the link to work properly. To add a personal touch to the website, headshots and gifs of each hacker and mentor were also taken for the website. The text previously written for the website was translated into French by the hackers as well as commencement of writing this journal. The kiosk team continued to build a server tower and varnish the table for the hacker den. D.E.N.N.I.S. was successfully able to drive around including up the ramp. Moreover, the electrical system was tested along with the redesigning and rebuilding of the feeding mechanism. The programmers were able to compile movement and shooting into one program. During their day of work, and at no fault of their own, the hackers experienced a total power outage for half an hour. Fortunately, this did not deter their work done in the dark.</p>"
-      }
+     },
+     {daysLeft: "17",
+      date: "<p>January 15<sup>th</sup></p>",
+      entry: "<p>Marking the second week of work during the holiday break, our hackers successfully added bilingual sub-titles for the video. Moreover, the website team continued their work on both the team and home pages. Our hackers also diligently worked on D.E.N.N.I.S. and were able to improve the path for the game pieces to slide along towards the launcher. They improved this aspect by adding rails to secure the proper position of the footballs. Our hackers also began building the robot necessary for the programming competition. Meanwhile, our kiosk team continued staining the wood used for the top of our hacker&rsquo;s desk along with finalizing the frame of the server tower.</p>"
+     },
+     {daysLeft: "16",
+      date: "<p>January 16<sup>th</sup></p>",
+      entry: "<p>Arriving early, our hackers rigorously worked to create the gallery, game explanation, robot explanation and journal pages for the website as well as insuring that the website can be successfully navigated. Simultaneously, the robot team managed to adjust the angle at which the launcher is mounted to a fixed position. Our kiosk team acquired and mounted many monitors to be placed on the back wall of our hacker&rsquo;s den. Lastly, our hackers continued their work on building the robot necessary to practice for the programming competition.</p>"
+     },
+     {daysLeft: "15",
+      date: "<p>January 17<sup>th</sup></p>",
+      entry: "<p>With the deadlines for both the video and website quickly approaching, our team of hackers are hard at work finalizing their tasks. The website team created the page for the journal along with finalizing the gallery page and navigation. The video team worked diligently to complete the animation portion. Meanwhile, the kiosk team continued varnishing and staining the hacker&rsquo;s desk and mounting the screens to the kiosk wall. The programmers also finalized the miniature robot necessary for the programming competition.</p>"
+     },
+     {daysLeft: "14",
+      date: "<p>January 18<sup>th</sup></p>",
+      entry: "<p>Way too busy finishing website and video to work on the journal. <br><strong>See you at the competition!</strong></p>"
+     }
     ];
     var ind = -1;
     var height=window.innerHeight;

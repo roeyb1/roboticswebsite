@@ -324,13 +324,14 @@ function scaleBox(event){
 				clearInterval(resizerator);
 				document.getElementById("consoleArea").innerHTML="";
 				consoleBox.style.overflowY="auto";
-				fillSection(info);
+				
 				/*if (consoleHasAnimated) document.getElementById("consoleArea").innerHTML=info;
 				else{
 					//document.cookie="consoleHasAnimated=true;path=/";
 					fillSection(info);
 				}*/
 				scaling=false;
+				fillSection(info);
 			}
 		}
 
