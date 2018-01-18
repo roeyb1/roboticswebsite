@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <link rel="shortcut icon" href="../media/favicon.png">
 </head>
-<body onload="numberLines()" onresize="location.reload();">
+<body onload="numberLines()" onresize="location.reload();numberLines()">
 	<div id="numbar"></div>
   <div id="content" style="height:100vh; min-height=100%">
     <p class="header">Journal</p>
@@ -25,7 +25,7 @@
             <div style="height:18px"></div>
             <button type="button" class="button" style="padding-left:10px"onclick="prevDay(); numberLines()" style=""><strong>Prev Day</strong></button>
           </div>
-          <div id="journalDaysLeft" style="text-align:right; margin-left:auto; font-size:28pt; padding-top:7%; color:red; padding-Right:3px"> <bold>--</bold> </div>
+          <div id="journalDaysLeft" style="text-align:right; margin-left:auto; font-size:26pt; padding-top:7%; color:red; padding-Right:0px"> <bold>--</bold> </div>
         </div>
       </div>
       <div style="margin-left:150px;  text-align:right">
@@ -47,10 +47,13 @@
     <div id="journalFoot" class="footer" style="position:relative; bottom:0; top:50px; padding-top:=100px">
       Our den is located at 4873 Westmount Avenue, in Westmount. Our hacker group consists of over 2000 students in more than 150 clubs.
        <br> Marianopolis is a private, English CEGEP.
-       <br><a id = "footerLink" class = "footer" href = "../fr/home.html"> Fran&ccedil;ais </a>
+       <br><a id = "footerLink" class = "footer" href = "../fr/journal.html"> Fran&ccedil;ais </a>
 		</div>
   </div>
-
+<div id="console", onmouseenter="scaleBox(event)", onmouseleave="scaleBox(event)">
+	<div id="consoleArea"></div>
+	<div id="cursor">|</div>
+</div>
   <script src="../js/RoboticsStuff.js"></script>
   <script src="../js/resize.js"></script>
   <script>
