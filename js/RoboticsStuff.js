@@ -5,7 +5,7 @@ var numbar=document.getElementById("numbar");
 numbar.style.fontSize=content.style.fontSize;
 
 function numberLines(){
-	getLangCookie();
+	getLang();
 	getInfo();
 	var preliminaryNumberOfLines;
 	var heightOfContent=content.clientHeight;//offsetHeight;
@@ -51,7 +51,7 @@ function numberLines(){
 }
 
 //Cookies
-var consoleHasAnimated;
+/*var consoleHasAnimated;
 
 function getAnimatedCookie(){
 	var consoleCookie=document.cookie;
@@ -67,31 +67,26 @@ function getAnimatedCookie(){
 
 	console.log(consoleCookie);
 	console.log(document.cookie);
-}
+}*/
 
 var lang;
 var info;
+var nagivateText;
 
-function getLangCookie(){
-	var consoleCookie=document.cookie;
-	if (consoleCookie==null||consoleCookie.search("lang")==-1){
-		if (window.location.pathname.search("fr")!=-1) lang="fr";
-		else lang="en";
-	}
-	else{
-		var beforeStartingIndex=document.cookie.search("lang=");
-		var startingIndex=document.cookie.indexOf("=",beforeStartingIndex);
-		//var endingIndex=document.cookie.indexOf(";",startingIndex);
-		cookieContents=document.cookie.slice(startingIndex+1);
-		if (cookieContents.search("en") != -1) lang="en";
-		else if (cookieContents.search("fr") != -1) lang="fr";
-		else lang=null;
-	}
+function getLang(){
+	if (window.location.pathname.search("fr")!=-1) lang="fr";
+	else lang="en";
 }
 
 function getInfo(){
-	if (lang=="en") info=infoEng;
-	else if (lang=="fr") info=infoFR;
+	if (lang=="en") {
+		info=infoEng;
+		navigateText="Navigate";
+	}
+	else if (lang=="fr"){
+		info=infoFR;
+		navigateText="Naviguer";
+	}
 }
 //Navigator
 var repeatFunction;
@@ -212,7 +207,7 @@ var repeatFunction;
 var changingDirs=false;
 
 		function printLink(linkID){
-			getLangCookie();
+			getLang();
 			changingDirs=true;
 			consoleBox.onmouseleave="";
 			var textToPrint=document.getElementById(linkID).innerText;
@@ -268,8 +263,8 @@ var abortingResize=false;
 
 function scaleBox(event){
 	console.log("resizing");
-	getAnimatedCookie();
-	getLangCookie();
+	//getAnimatedCookie();
+	getLang();
 	getInfo();
 
 	var locationX=event.clientX;
@@ -329,11 +324,12 @@ function scaleBox(event){
 				clearInterval(resizerator);
 				document.getElementById("consoleArea").innerHTML="";
 				consoleBox.style.overflowY="auto";
-				if (consoleHasAnimated) document.getElementById("consoleArea").innerHTML=info;
+				fillSection(info);
+				/*if (consoleHasAnimated) document.getElementById("consoleArea").innerHTML=info;
 				else{
-					document.cookie="consoleHasAnimated=true;path=/";
+					//document.cookie="consoleHasAnimated=true;path=/";
 					fillSection(info);
-				}
+				}*/
 				scaling=false;
 			}
 		}
@@ -351,7 +347,7 @@ function scaleBox(event){
 			clearInterval(repeatFunction);
 			clearInterval(flashCursor);
 			cursor.style.opacity=0;
-			document.getElementById("consoleArea").innerHTML="Navigate";
+			document.getElementById("consoleArea").innerHTML=navigateText;
 			printingComplete=true;
 			if (width>desiredWidth && height>desiredHeight){
 				width-=4; height-=4*consoleAspect;
@@ -375,7 +371,7 @@ function scaleBox(event){
 				clearInterval(resizerator);
 				consoleBox.style.overflowY="hidden";
 				scaling=false;
-				document.getElementById("consoleArea").innerHTML="Navigate";
+				document.getElementById("consoleArea").innerHTML=navigateText;
 			}
 
 
