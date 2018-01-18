@@ -249,6 +249,8 @@ var screenHeight;
 
 var consoleYToTrigger;
 var consoleXToTrigger;
+var outsideX;
+var outsideY;
 
 
 var maxYToTrigger;
@@ -268,7 +270,10 @@ function getMaxToTrigger(){
 	screenHeight=window.innerHeight;
 
 	consoleYToTrigger=parseInt(window.innerHeight)*0.04+height;
-		consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
+	consoleXToTrigger=parseInt(window.innerWidth)*0.04+width;
+	
+	outsideY=parseInt(window.innerHeight)-(parseInt(window.innerHeight)*0.04)-1;
+	outsideX=parseInt(window.innerWidth)-parseInt(window.innerWidth)*0.04-1;
 
 	maxYToTrigger=screenHeight-consoleYToTrigger-1;
 	maxXToTrigger=screenWidth-consoleXToTrigger-1;
@@ -292,8 +297,8 @@ function scaleBox(event){
 		if (screenWidth<1000) consoleBigWidth=275;
 		else;
 		
-		if (!changingDirs && (locationX<maxXToTrigger||locationY<maxYToTrigger)){
-			if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger||locationY<maxYToTrigger)){
+		if (!changingDirs && (locationX<maxXToTrigger || locationX>outsideX||locationY<maxYToTrigger||locationY>outsideY)){
+			if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger || locationX>outsideX||locationY<maxYToTrigger||locationY>outsideY)){
 				abortingResize=true;
 				resizerator=setInterval(shrink, 1);
 				}
