@@ -5,6 +5,8 @@ var numbar=document.getElementById("numbar");
 numbar.style.fontSize=content.style.fontSize;
 
 function numberLines(){
+	getLangCookie();
+	getInfo();
 	var preliminaryNumberOfLines;
 	var heightOfContent=content.clientHeight;//offsetHeight;
 	var windowHeight=window.innerHeight;
@@ -51,7 +53,7 @@ function numberLines(){
 //Cookies
 var consoleHasAnimated;
 
-function getCookie(){
+function getAnimatedCookie(){
 	var consoleCookie=document.cookie;
 	if (consoleCookie==null||consoleCookie==undefined) consoleHasAnimated=false;
 	else{
@@ -66,21 +68,55 @@ function getCookie(){
 	console.log(consoleCookie);
 	console.log(document.cookie);
 }
+
+var lang;
+var info;
+
+function getLangCookie(){
+	var consoleCookie=document.cookie;
+	if (consoleCookie==null||consoleCookie.search("lang")==-1){
+		if (window.location.pathname.search("fr")!=-1) lang="fr";
+		else lang="en";
+	}
+	else{
+		var beforeStartingIndex=document.cookie.search("lang=");
+		var startingIndex=document.cookie.indexOf("=",beforeStartingIndex);
+		//var endingIndex=document.cookie.indexOf(";",startingIndex);
+		cookieContents=document.cookie.slice(startingIndex+1);
+		if (cookieContents.search("en") != -1) lang="en";
+		else if (cookieContents.search("fr") != -1) lang="fr";
+		else lang=null;
+	}
+}
+
+function getInfo(){
+	if (lang=="en") info=infoEng;
+	else if (lang=="fr") info=infoFR;
+}
 //Navigator
 var repeatFunction;
 var flashCursor;
 var homeString="<br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> ";
 		var currentDir=homeString;
-		var language="en";
-		var info=`
+		var language=lang;
+		var infoEng=`
 		Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. All lefts reserved.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br>
-		<a id=\"home\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../${language}/home.html\')\">home/</a><br>
-		<a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../${language}/game.html\')\">game/</a><br>
-		<a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../${language}/team.html\')\"> team/</a><br>
-		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../${language}/robot.html\')\"> robot/</a><br>
-		<a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../${language}/gallery.html\')\">gallery/</a><br>
-		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../${language}/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
+		<a id=\"home\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/home.html\')\">home/</a><br>
+		<a id=\"game\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/game.html\')\">game/</a><br>
+		<a id=\"team\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/team.html\')\"> team/</a><br>
+		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/robot.html\')\"> robot/</a><br>
+		<a id=\"gallery\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/gallery.html\')\">gallery/</a><br>
+		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../en/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
+		var infoFR=`
+		Marianonymous Robotics [kernel 5.778-4](c) 2018 Marianopolis College. Toutes gauches r\u00e9serv\u00e9es.<!-- laglaglaglaglaglaglaglaglaglaglag --><br style=line-height:1px><span id=\"aFirst\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bFirst\", class=\"b\">~</span><span id=\"cFirst\", class=\"c\">$</span><!--lag-->ls <br>
+		<a id=\"accueil\", onclick=\"printLink(id)\", href=\"javascript:delay(\'..fr/home.html\')\">accueil/</a><br>
+		<a id=\"jeu\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/game.html\')\">jeu/</a><br>
+		<a id=\"\u00e9quipe\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/team.html\')\">\u00e9quipe/</a><br>
+		<a id=\"robot\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/robot.html\')\">robot/</a><br>
+		<a id=\"gallerie\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/gallery.html\')\">gallerie/</a><br>
+		<a id=\"journal\", onclick=\"printLink(id)\", href=\"javascript:delay(\'../fr/journal.html\')\"> journal/</a><br><span id=\"aSecond\", class=\"a\">hackerman@marianopolis</span>:<span id=\"bSecond\", class=\"b\">~</span><span id=\"cSecond\", class=\"c\">$</span> `;
 		//var homeString="<br><span id=a>hackerman@marianopolis</span>:<span id=b>~</span><span id=c>$</span> "
+		
 var printingComplete;
 var sectionToFill;
 var repeatFunction;
@@ -228,7 +264,9 @@ var abortingResize=false;
 
 function scaleBox(event){
 	console.log("resizing");
-	getCookie();
+	getAnimatedCookie();
+	getLangCookie();
+	getInfo();
 
 	var locationX=event.clientX;
 	var locationY=event.clientY;

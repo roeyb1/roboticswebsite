@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="shortcut icon" href="../media/favicon.png">
 </head>
-<body onload="numberLines()">
+<body onload="adjustVideoSize();numberLines()", onresize="location.reload();adjustVideoSize();numberLines()">
 	<div id="numbar"></div>
 	<div id="content">
 
@@ -16,7 +16,7 @@
     <p class="subHeader"><i> &lt!-- Converto 2018 --&gt</i> </p>
 
     <div align="center">
-      <iframe width="854" height="480" style="margin-top:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://www.youtube.com/embed/-XThoO--bXM?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe id="gameVideo" width="854" height="480" style="margin-top:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://www.youtube.com/embed/-XThoO--bXM?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
     <div class="gameDescription" >
@@ -41,5 +41,23 @@
 
   <script src="../js/RoboticsStuff.js"></script>
 
+	<script>
+		function adjustVideoSize(){
+			var windowHeight=window.innerHeight;
+			var windowWidth=window.innerWidth;
+			var video=document.getElementById("gameVideo");
+			
+			var currentVideoWidth=parseInt(video.style.width);
+			var currentVideoHeight=parseInt(video.style.height);
+			
+			var aspectRatio=currentVideoWidth/currentVideoHeight;
+			
+			var newVideoWidth=2*windowWidth/3;
+			var newVideoHeight=newVideoWidth*aspectRatio;
+			
+			video.style.width=newVideoWidth+"px";
+			video.style.height=newVideoHeight+"px";
+		}
+	</script>
 </body>
 </html>
