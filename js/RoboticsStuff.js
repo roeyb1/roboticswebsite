@@ -173,8 +173,10 @@ var repeatFunction;
 			//cursor.style.opacity=1;
 
 		}
+var changingDirs=false;
 
 		function printLink(linkID){
+			changingDirs=true;
 			consoleBox.onmouseleave="";
 			var textToPrint=document.getElementById(linkID).innerText;
 			var newDir=homeString.replace("~",`~/${linkID}`);
@@ -190,8 +192,8 @@ var repeatFunction;
 
 		function delay(url){
 			keepBoxSize();
-			setTimeout(function(){window.location=url}, 10000);
-			//clearInterval(flashCursor);
+			setTimeout(function(){window.location=url}, 1000);
+			clearInterval(flashCursor);
 		}
 //Expand navigator:
 var consoleBox=document.getElementById("console");
@@ -248,16 +250,17 @@ function scaleBox(event){
 	//Change Big heigth and width based on window size:
 		if (screenWidth<1000) consoleBigWidth=275;
 		else;
-
-		if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger||locationY<maxYToTrigger)){
-			abortingResize=true;
-			resizerator=setInterval(shrink, 1);
+		
+		if (!changingDirs){
+			if ((boxIsScaled||scaling)&&(locationX<maxXToTrigger||locationY<maxYToTrigger)){
+				abortingResize=true;
+				resizerator=setInterval(shrink, 1);
+				}
+			else{
+				resizerator=setInterval(grow, 1);
+				abortingResize=false;
 			}
-		else{
-			resizerator=setInterval(grow, 1);
-			abortingResize=false;
-		}
-
+		} else{}
 	function grow(){
 			width=parseInt(consoleBox.style.width);
 			height=parseInt(consoleBox.style.height);
